@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing — Folio writing software</title>
+  <meta name="description" content="Folio is free to start. Upgrade when the work demands it. No dark patterns, no annual lock-ins you didn't read." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..560&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="styles/tokens.css" />
+  <link rel="stylesheet" href="styles/pricing.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="site-header" data-header>
+    <div class="container site-header__inner">
+      <a class="wordmark" href="index.html">Folio<span class="dot">.</span></a>
+      <nav class="nav" aria-label="Primary">
+        <a href="landing.html#craft">Craft</a>
+        <a href="landing.html#features">Features</a>
+        <a href="pricing.html" aria-current="page">Pricing</a>
+        <a href="article.html">Journal</a>
+        <span class="nav__sep" aria-hidden="true"></span>
+        <a href="#" class="link">Sign in</a>
+        <a href="#" class="btn">Start writing <span class="btn__arrow" aria-hidden="true">→</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ─────────────────────────── MASTHEAD ─────────────────────────── -->
+    <section class="section masthead">
+      <div class="container">
+        <p class="eyebrow" data-reveal>Plans</p>
+        <h1 class="masthead__title" data-reveal data-reveal-delay="1">
+          Pay for software that gets<br /><em>out of the way</em>.
+        </h1>
+        <p class="lede masthead__lede" data-reveal data-reveal-delay="2">
+          Start free. Upgrade when the work outgrows a single desk.
+          Cancel in two clicks, export everything as plain text, keep every
+          word you ever wrote.
+        </p>
+
+        <!-- Monthly / Annual toggle -->
+        <div class="toggle-wrap" data-reveal data-reveal-delay="3">
+          <fieldset class="billing-toggle" id="billing-toggle">
+            <legend class="visually-hidden">Billing period</legend>
+            <label class="billing-toggle__opt">
+              <input type="radio" name="billing" value="monthly" checked />
+              <span>Monthly</span>
+            </label>
+            <label class="billing-toggle__opt">
+              <input type="radio" name="billing" value="annual" />
+              <span>Annual <em class="toggle-save">save 2 months</em></span>
+            </label>
+          </fieldset>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────── PLANS (asymmetric) ─────────────────────────── -->
+    <section class="section section--tight plans" aria-labelledby="plans-heading">
+      <h2 id="plans-heading" class="visually-hidden">Choose a plan</h2>
+      <div class="container plans__layout">
+
+        <!-- Secondary: Reader (free) — compact, left rail -->
+        <article class="plan plan--reader" data-reveal>
+          <header class="plan__head">
+            <span class="index-num">01</span>
+            <h3 class="plan__name">Reader</h3>
+            <p class="plan__price">
+              <span class="plan__amount serif">Free</span>
+            </p>
+          </header>
+          <p class="plan__desc">The full writing environment, one desk. No expiry,
+            no credit card. When you need more, you'll know.</p>
+          <ul class="plan__features">
+            <li>One active project</li>
+            <li>Unlimited plain-text export</li>
+            <li>Local-first archive, no cloud required</li>
+            <li>Typographic editor, full feature set</li>
+            <li>Community forum access</li>
+          </ul>
+          <a href="#" class="btn btn--ghost plan__cta">Start free <span class="btn__arrow" aria-hidden="true">→</span></a>
+        </article>
+
+        <!-- Primary: Writer — the featured plan, large, persimmon accent -->
+        <article class="plan plan--writer plan--featured" data-reveal data-reveal-delay="1" aria-label="Writer plan, recommended">
+          <div class="plan__featured-flag">
+            <span class="tag tag--accent">Most writers choose this</span>
+          </div>
+          <header class="plan__head">
+            <span class="index-num">02</span>
+            <h3 class="plan__name">Writer</h3>
+            <p class="plan__price">
+              <span class="plan__amount serif" data-monthly="$8" data-annual="$6.67">$8</span>
+              <span class="plan__per">/&nbsp;month</span>
+            </p>
+            <p class="plan__billing-note muted" aria-live="polite">Billed monthly</p>
+          </header>
+          <p class="plan__desc">Everything a working writer needs: unlimited
+            projects, cloud sync, revision history. The desk that grows with
+            the work.</p>
+          <ul class="plan__features plan__features--main">
+            <li>Unlimited projects &amp; drafts</li>
+            <li>Cloud sync across devices</li>
+            <li>Full revision history — every sentence</li>
+            <li>Custom typefaces &amp; themes</li>
+            <li>30-day version snapshot archive</li>
+            <li>Priority email support</li>
+            <li>Early access to new features</li>
+          </ul>
+          <a href="#" class="btn btn--accent btn--lg plan__cta">Start 30-day trial <span class="btn__arrow" aria-hidden="true">→</span></a>
+          <p class="plan__fine muted">No card required for trial. Cancel any time.</p>
+        </article>
+
+        <!-- Secondary: Studio (teams) — compact, right rail -->
+        <article class="plan plan--studio" data-reveal data-reveal-delay="2">
+          <header class="plan__head">
+            <span class="index-num">03</span>
+            <h3 class="plan__name">Studio</h3>
+            <p class="plan__price">
+              <span class="plan__amount serif" data-monthly="$20" data-annual="$16.67">$20</span>
+              <span class="plan__per">/&nbsp;seat&nbsp;/&nbsp;month</span>
+            </p>
+            <p class="plan__billing-note muted" aria-live="polite">Billed monthly</p>
+          </header>
+          <p class="plan__desc">Shared desks, shared context. Everything in
+            Writer plus collaborative annotation, team libraries, and
+            dedicated onboarding.</p>
+          <ul class="plan__features">
+            <li>Everything in Writer</li>
+            <li>Up to 25 seats</li>
+            <li>Shared project libraries</li>
+            <li>Collaborative margin notes</li>
+            <li>Admin dashboard &amp; billing controls</li>
+            <li>Dedicated onboarding call</li>
+          </ul>
+          <a href="#" class="btn btn--ghost plan__cta">Talk to us <span class="btn__arrow" aria-hidden="true">→</span></a>
+          <p class="plan__fine muted">Need 25+ seats? <a href="#" class="link">Contact us</a> for volume pricing.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ─────────────────────────── COMPARISON TABLE ─────────────────────────── -->
+    <section class="section section--tight compare" aria-labelledby="compare-heading">
+      <div class="container">
+        <p class="eyebrow" data-reveal>In full</p>
+        <h2 id="compare-heading" class="compare__title" data-reveal data-reveal-delay="1">
+          The complete ledger.
+        </h2>
+
+        <div class="compare__scroll" data-reveal data-reveal-delay="2">
+          <table class="compare-table" aria-label="Feature comparison across plans">
+            <thead>
+              <tr>
+                <th scope="col" class="compare-table__feature-col">Feature</th>
+                <th scope="col" class="compare-table__plan-col">Reader</th>
+                <th scope="col" class="compare-table__plan-col compare-table__plan-col--featured">
+                  Writer
+                  <span class="compare-table__featured-badge tag tag--accent">Recommended</span>
+                </th>
+                <th scope="col" class="compare-table__plan-col">Studio</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <!-- Writing group -->
+              <tr class="compare-table__group-row">
+                <th scope="rowgroup" colspan="4" class="compare-table__group">Writing</th>
+              </tr>
+              <tr>
+                <td>Typographic editor</td>
+                <td class="check" aria-label="Included">✓</td>
+                <td class="check compare-table__col--featured" aria-label="Included">✓</td>
+                <td class="check" aria-label="Included">✓</td>
+              </tr>
+              <tr>
+                <td>Active projects</td>
+                <td class="mono muted" aria-label="1 project">1</td>
+                <td class="mono compare-table__col--featured" aria-label="Unlimited">Unlimited</td>
+                <td class="mono" aria-label="Unlimited">Unlimited</td>
+              </tr>
+              <tr>
+                <td>Custom typefaces &amp; themes</td>
+                <td aria-label="Not included">—</td>
+                <td class="check compare-table__col--featured" aria-label="Included">✓</td>
+                <td class="check" aria-label="Included">✓</td>
+              </tr>
+              <tr>
+                <td>Plain-text export</td>
+                <td class="check" aria-label="Included">✓</td>
+                <td class="check compare-table__col--featured" aria-label="Included">✓</td>
+                <td class="check" aria-label="Included">✓</td>
+              </tr>
+              <tr>
+                <td>PDF &amp; EPUB export</td>
+                <td aria-label="Not included">—</td>
+                <td class="check compare-table__col--featured" aria-label="Included">✓</td>
+                <td class="check" aria-label="Included">✓</td>
+              </tr>
+
+              <!-- Sync & archive group -->
+              <tr class="compare-table__group-row">
+                <th scope="rowgroup" colspan="4" class="compare-table__group">Sync &amp; archive</th>
+              </tr>
+              <tr>
+                <td>Local-first archive</td>
+                <td class="check" aria-label="Included">✓</td>
+                <td class="check compare-table__col--featured" aria-label="Included">✓</td>
+                <td class="check" aria-label="Included">✓</td>
+              </tr>
+              <tr>
+                <td>Cloud sync (multi-device)</td>
+                <td aria-label="Not included">—</td>
+                <td class="check compare-table__col--featured" aria-label="Included">✓</td>
+                <td class="check" aria-label="Included">✓</td>
+              </tr>
+              <tr>
+                <td>Revision history</td>
+                <td class="mono muted" aria-label="Last 5 versions">5 versions</td>
+                <td class="check compare-table__col--featured" aria-label="Complete history">Complete</td>
+                <td class="check" aria-label="Complete history">Complete</td>
+              </tr>
+              <tr>
+                <td>Snapshot archive</td>
+                <td aria-label="Not included">—</td>
+                <td class="mono compare-table__col--featured" aria-label="30-day snapshots">30 days</td>
+                <td class="mono" aria-label="1-year snapshots">1 year</td>
+              </tr>
+
+              <!-- Collaboration group -->
+              <tr class="compare-table__group-row">
+                <th scope="rowgroup" colspan="4" class="compare-table__group">Collaboration</th>
+              </tr>
+              <tr>
+                <td>Shared project libraries</td>
+                <td aria-label="Not included">—</td>
+                <td class="muted compare-table__col--featured" aria-label="Not included">—</td>
+                <td class="check" aria-label="Included">✓</td>
+              </tr>
+              <tr>
+                <td>Collaborative margin notes</td>
+                <td aria-label="Not included">—</td>
+                <td class="muted compare-table__col--featured" aria-label="Not included">—</td>
+                <td class="check" aria-label="Included">✓</td>
+              </tr>
+              <tr>
+                <td>Team seats</td>
+                <td class="muted mono" aria-label="Not available">—</td>
+                <td class="muted compare-table__col--featured mono" aria-label="Not available">—</td>
+                <td class="mono" aria-label="Up to 25 seats">Up to 25</td>
+              </tr>
+              <tr>
+                <td>Admin dashboard</td>
+                <td aria-label="Not included">—</td>
+                <td class="muted compare-table__col--featured" aria-label="Not included">—</td>
+                <td class="check" aria-label="Included">✓</td>
+              </tr>
+
+              <!-- Support group -->
+              <tr class="compare-table__group-row">
+                <th scope="rowgroup" colspan="4" class="compare-table__group">Support</th>
+              </tr>
+              <tr>
+                <td>Community forum</td>
+                <td class="check" aria-label="Included">✓</td>
+                <td class="check compare-table__col--featured" aria-label="Included">✓</td>
+                <td class="check" aria-label="Included">✓</td>
+              </tr>
+              <tr>
+                <td>Email support</td>
+                <td aria-label="Not included">—</td>
+                <td class="compare-table__col--featured" aria-label="Priority email support">Priority</td>
+                <td aria-label="Priority email support">Priority</td>
+              </tr>
+              <tr>
+                <td>Dedicated onboarding</td>
+                <td aria-label="Not included">—</td>
+                <td class="muted compare-table__col--featured" aria-label="Not included">—</td>
+                <td class="check" aria-label="Included">✓</td>
+              </tr>
+              <tr>
+                <td>Early feature access</td>
+                <td aria-label="Not included">—</td>
+                <td class="check compare-table__col--featured" aria-label="Included">✓</td>
+                <td class="check" aria-label="Included">✓</td>
+              </tr>
+
+            </tbody>
+            <tfoot>
+              <tr class="compare-table__actions">
+                <td></td>
+                <td><a href="#" class="btn btn--ghost">Start free</a></td>
+                <td class="compare-table__col--featured"><a href="#" class="btn btn--accent">Start trial</a></td>
+                <td><a href="#" class="btn btn--ghost">Talk to us</a></td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────── FAQ ─────────────────────────── -->
+    <section class="section section--tight faq" aria-labelledby="faq-heading">
+      <div class="container">
+        <div class="faq__grid">
+          <div class="faq__intro" data-reveal>
+            <p class="eyebrow">Common questions</p>
+            <h2 id="faq-heading">The things<br />worth asking.</h2>
+          </div>
+          <dl class="faq__list">
+
+            <div class="faq__item" data-reveal>
+              <dt class="faq__q serif">Can I really use Folio for free, forever?</dt>
+              <dd class="faq__a">Yes. Reader is a permanent free tier, not a trial.
+                You get the full typographic editor and one active project with no
+                expiry. We'd rather earn an upgrade than extract one.</dd>
+            </div>
+
+            <div class="faq__item" data-reveal data-reveal-delay="1">
+              <dt class="faq__q serif">What happens to my writing if I cancel?</dt>
+              <dd class="faq__a">Nothing bad. Every draft exports as plain text — a
+                format that will outlive every subscription service on earth. Your
+                local archive stays intact. You leave with everything you came with.</dd>
+            </div>
+
+            <div class="faq__item" data-reveal data-reveal-delay="2">
+              <dt class="faq__q serif">How does annual billing actually work?</dt>
+              <dd class="faq__a">You pay for ten months and get twelve. Writer drops
+                from $8 to $6.67/month; Studio from $20 to $16.67/seat. We collect
+                the annual total up front and don't touch your card again for a year.</dd>
+            </div>
+
+            <div class="faq__item" data-reveal data-reveal-delay="3">
+              <dt class="faq__q serif">Is Folio really local-first? Where does my data live?</dt>
+              <dd class="faq__a">Your drafts are files on your disk first. Cloud sync
+                (Writer and Studio) mirrors them to our servers for cross-device access,
+                but you never <em>need</em> the internet to open, write, or export. We
+                are not the custodian of your work — you are.</dd>
+            </div>
+
+            <div class="faq__item" data-reveal data-reveal-delay="4">
+              <dt class="faq__q serif">Does Folio use my writing to train AI?</dt>
+              <dd class="faq__a">No. We have no language model in the editor and no
+                interest in one. Your prose is yours. It is not a training set, a
+                product signal, or a dataset. This will not change with a policy update
+                buried in an email.</dd>
+            </div>
+
+            <div class="faq__item" data-reveal data-reveal-delay="5">
+              <dt class="faq__q serif">Can Studio scale beyond 25 seats?</dt>
+              <dd class="faq__a">Contact us. We work directly with presses, journals,
+                and writing programs that need custom seat counts, billing terms, and
+                onboarding. Volume pricing is available and the conversation is free.</dd>
+            </div>
+
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────── CTA ─────────────────────────── -->
+    <section class="cta">
+      <div class="container cta__inner" data-reveal>
+        <h2 class="cta__title">Put something true<br />on the page today.</h2>
+        <div class="cta__actions">
+          <a href="#" class="btn btn--accent btn--lg">Start writing — free for 30 days <span class="btn__arrow" aria-hidden="true">→</span></a>
+          <p class="cta__fine">No card. Exports to plain text whenever you leave.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <span class="wordmark">Folio<span class="dot">.</span></span>
+        <p class="footer__tag">A writing desk, not a content machine.</p>
+      </div>
+      <nav class="footer__col" aria-label="Product">
+        <p class="footer__head">Product</p>
+        <a href="landing.html#features">Features</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="#">The desk</a>
+        <a href="#">Changelog</a>
+      </nav>
+      <nav class="footer__col" aria-label="Reading">
+        <p class="footer__head">Reading</p>
+        <a href="article.html">Journal</a>
+        <a href="landing.html#craft">Manifesto</a>
+        <a href="#">Field notes</a>
+      </nav>
+      <nav class="footer__col" aria-label="Company">
+        <p class="footer__head">Studio</p>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#">Press kit</a>
+      </nav>
+    </div>
+    <div class="container footer__base">
+      <span>© <span data-year>2026</span> Folio Press. Set in Fraunces &amp; Hanken Grotesk.</span>
+      <span class="index-num">EDITORIAL TEMPLATE · 03/04</span>
+    </div>
+  </footer>
+
+  <!-- Billing toggle: swap prices without a framework -->
+  <script>
+    (function () {
+      var toggle = document.getElementById('billing-toggle');
+      if (!toggle) return;
+      var amounts = document.querySelectorAll('[data-monthly]');
+      var notes = document.querySelectorAll('.plan__billing-note');
+      toggle.addEventListener('change', function (e) {
+        var isAnnual = e.target.value === 'annual';
+        amounts.forEach(function (el) {
+          el.textContent = isAnnual ? el.dataset.annual : el.dataset.monthly;
+        });
+        notes.forEach(function (el) {
+          el.textContent = isAnnual ? 'Billed annually' : 'Billed monthly';
+        });
+      });
+    })();
+  </script>
+
+  <script src="../shared/reveal.js" defer></script>
+</body>
+</html>

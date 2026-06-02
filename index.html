@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anti-Slop Templates — two design systems, eight surfaces</title>
+  <meta name="description" content="A specimen sheet of anti-AI-slop HTML templates in two committed design languages: warm editorial and the Suede IP terminal." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..560&family=Hanken+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="editorial/styles/tokens.css" />
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="site-header" data-header>
+    <div class="container site-header__inner">
+      <a class="wordmark" href="index.html">Anti&#8209;Slop<span class="dot">·</span><span class="wordmark__sub">Templates</span></a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#editorial">Editorial</a>
+        <a href="#suede">Suede</a>
+        <span class="nav__sep" aria-hidden="true"></span>
+        <a href="#how" class="link">How to use</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ───────────── Masthead ───────────── -->
+    <section class="masthead container">
+      <p class="eyebrow" data-reveal>A specimen sheet · <span data-year>2026</span></p>
+      <h1 class="masthead__title" data-reveal data-reveal-delay="1">
+        Two systems.<br />Eight surfaces.<br /><em>Zero</em> slop.
+      </h1>
+      <p class="lede masthead__lede" data-reveal data-reveal-delay="2">
+        The reliable cure for the generic AI look — purple gradients, centered
+        hero-and-blob, identical card grids, Inter-on-white — isn't taste in the
+        abstract. It's <strong>committing to one specific direction</strong> and
+        building everything in it. Here are two such commitments, each across a
+        landing, an article, a pricing page, and a dashboard.
+      </p>
+      <div class="masthead__meta" data-reveal data-reveal-delay="3">
+        <span>Self-contained HTML + CSS</span>
+        <span>No build step</span>
+        <span>Accessible · reduced-motion safe</span>
+        <span>Ports cleanly to Tailwind / JSX</span>
+      </div>
+    </section>
+
+    <!-- ───────────── System: Editorial ───────────── -->
+    <section class="system" id="editorial">
+      <div class="container">
+        <div class="system__head" data-reveal>
+          <div>
+            <p class="index-num">SYSTEM 01</p>
+            <h2 class="system__name">Editorial</h2>
+            <p class="system__desc">Warm paper, near-black ink, one persimmon accent. Print-rooted
+              hierarchy, an honest grid you break on purpose. <span class="muted">“Folio”, a writing tool.</span></p>
+          </div>
+          <dl class="spec">
+            <div><dt>Type</dt><dd class="serif">Fraunces</dd><dd>+ Hanken Grotesk</dd></div>
+            <div><dt>Palette</dt><dd class="swatches">
+              <span class="sw" style="background:var(--paper)"></span>
+              <span class="sw" style="background:var(--ink)"></span>
+              <span class="sw" style="background:var(--accent)"></span>
+              <span class="sw" style="background:var(--line)"></span>
+            </dd></div>
+          </dl>
+        </div>
+
+        <ul class="tiles">
+          <li data-reveal><a class="tile" href="editorial/landing.html"><span class="tile__n index-num">01</span><span class="tile__name serif">Landing</span><span class="tile__desc">Asymmetric editorial hero, bento features</span><span class="tile__go">Open <span aria-hidden="true">→</span></span></a></li>
+          <li data-reveal data-reveal-delay="1"><a class="tile" href="editorial/article.html"><span class="tile__n index-num">02</span><span class="tile__name serif">Article</span><span class="tile__desc">Long-form with marginalia &amp; drop cap</span><span class="tile__go">Open <span aria-hidden="true">→</span></span></a></li>
+          <li data-reveal data-reveal-delay="2"><a class="tile" href="editorial/pricing.html"><span class="tile__n index-num">03</span><span class="tile__name serif">Pricing</span><span class="tile__desc">Editorial plans + a table as typography</span><span class="tile__go">Open <span aria-hidden="true">→</span></span></a></li>
+          <li data-reveal data-reveal-delay="3"><a class="tile" href="editorial/dashboard.html"><span class="tile__n index-num">04</span><span class="tile__name serif">Dashboard</span><span class="tile__desc">A writer's desk, hand-built charts</span><span class="tile__go">Open <span aria-hidden="true">→</span></span></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ───────────── System: Suede ───────────── -->
+    <section class="system system--dark" id="suede">
+      <div class="container">
+        <div class="system__head" data-reveal>
+          <div>
+            <p class="index-num index-num--cyan">SYSTEM 02</p>
+            <h2 class="system__name ff-suede">Suede</h2>
+            <p class="system__desc">Deep-ink ground, Rights Red, Registry Cyan, brass. An institutional
+              IP terminal — matches <span class="ff-mono cyan">suedeai.ai</span>. Tricolor registry rule, status badges.</p>
+          </div>
+          <dl class="spec spec--dark">
+            <div><dt>Type</dt><dd class="ff-suede">Instrument Serif</dd><dd>+ Manrope · mono</dd></div>
+            <div><dt>Palette</dt><dd class="swatches">
+              <span class="sw" style="background:#050b16"></span>
+              <span class="sw" style="background:#22d3ee"></span>
+              <span class="sw" style="background:#9f101a"></span>
+              <span class="sw" style="background:#34d399"></span>
+              <span class="sw" style="background:oklch(0.74 0.09 78)"></span>
+            </dd></div>
+          </dl>
+        </div>
+        <hr class="reg-rule" aria-hidden="true" />
+
+        <ul class="tiles tiles--dark">
+          <li data-reveal><a class="tile" href="suede/landing.html"><span class="tile__n index-num index-num--cyan">01</span><span class="tile__name ff-suede">Landing</span><span class="tile__desc">Proof-record hero, registry bento</span><span class="tile__go">Open <span aria-hidden="true">→</span></span></a></li>
+          <li data-reveal data-reveal-delay="1"><a class="tile" href="suede/article.html"><span class="tile__n index-num index-num--cyan">02</span><span class="tile__name ff-suede">Docs</span><span class="tile__desc">Terminal docs, sticky TOC, code blocks</span><span class="tile__go">Open <span aria-hidden="true">→</span></span></a></li>
+          <li data-reveal data-reveal-delay="2"><a class="tile" href="suede/pricing.html"><span class="tile__n index-num index-num--cyan">03</span><span class="tile__name ff-suede">Pricing</span><span class="tile__desc">Registry plans + metered readout</span><span class="tile__go">Open <span aria-hidden="true">→</span></span></a></li>
+          <li data-reveal data-reveal-delay="3"><a class="tile" href="suede/dashboard.html"><span class="tile__n index-num index-num--cyan">04</span><span class="tile__name ff-suede">Terminal</span><span class="tile__desc">Registry dashboard, area chart, identity</span><span class="tile__go">Open <span aria-hidden="true">→</span></span></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ───────────── How to use ───────────── -->
+    <section class="section how" id="how">
+      <div class="container how__grid">
+        <div class="how__intro" data-reveal>
+          <p class="eyebrow">Using these</p>
+          <h2>Take one,<br />commit to it.</h2>
+        </div>
+        <ol class="how__steps">
+          <li data-reveal><span class="index-num">i</span><div><h4>Open any file</h4><p>Every page is self-contained HTML. Double-click it, or serve the folder. No install, no build.</p></div></li>
+          <li data-reveal data-reveal-delay="1"><span class="index-num">ii</span><div><h4>Edit the tokens, not the pages</h4><p>Each system's look lives in <span class="mono">styles/tokens.css</span>. Change the palette or type there and all four surfaces follow.</p></div></li>
+          <li data-reveal data-reveal-delay="2"><span class="index-num">iii</span><div><h4>Port when ready</h4><p>The markup maps 1:1 onto Tailwind utilities or JSX components. The CSS-variable scale is the contract.</p></div></li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__base">
+      <span>Anti-Slop Templates · built in Claude · set in Fraunces, Instrument Serif &amp; mono.</span>
+      <span class="index-num">2 SYSTEMS · 8 SURFACES</span>
+    </div>
+  </footer>
+
+  <script src="shared/reveal.js" defer></script>
+</body>
+</html>

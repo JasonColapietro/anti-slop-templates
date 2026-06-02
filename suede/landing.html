@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suede — proof of creation for the work you make</title>
+  <meta name="description" content="Register, time-stamp and license what you create. On-chain provenance and agent-readable rights for creators." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="styles/tokens.css" />
+  <link rel="stylesheet" href="styles/landing.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="gridlines" aria-hidden="true"></div>
+  <hr class="registry-rule registry-rule--top" aria-hidden="true" />
+
+  <header class="site-header" data-header>
+    <div class="container site-header__inner">
+      <a class="wordmark" href="index.html"><span class="mark">S</span>Suede</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#registry">Registry</a>
+        <a href="#rights">Rights</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="article.html">Docs</a>
+        <span class="nav__sep" aria-hidden="true"></span>
+        <a href="#" class="link">Sign in</a>
+        <a href="dashboard.html" class="btn">Open the terminal <span class="btn__arrow" aria-hidden="true">→</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ─────────────────────────── HERO ─────────────────────────── -->
+    <section class="hero section">
+      <div class="container hero__grid">
+        <div class="hero__lead">
+          <p class="eyebrow" data-reveal>Proof-of-creation · on-chain registry</p>
+          <h1 class="hero__title" data-reveal data-reveal-delay="1">
+            Prove you made it<br />— before anyone<br />thinks to <span class="hero__mark">ask.</span>
+          </h1>
+          <p class="lede hero__lede" data-reveal data-reveal-delay="2">
+            Register, time-stamp and license everything you create. Suede writes a
+            permanent, verifiable record of authorship — readable by humans, courts,
+            and the agents now negotiating on your behalf.
+          </p>
+          <div class="hero__badges" data-reveal data-reveal-delay="3">
+            <span class="badge badge--verified"><span class="badge__dot"></span>Verified author</span>
+            <span class="badge badge--registry"><span class="badge__dot"></span>On-chain proof</span>
+            <span class="badge badge--license"><span class="badge__dot"></span>Active license</span>
+          </div>
+          <div class="hero__actions" data-reveal data-reveal-delay="4">
+            <a href="dashboard.html" class="btn btn--lg">Register a work <span class="btn__arrow" aria-hidden="true">→</span></a>
+            <a href="#rights" class="btn btn--ghost btn--lg">Read the spec</a>
+          </div>
+        </div>
+
+        <!-- Registry "proof record" — the terminal motif -->
+        <div class="hero__art" data-reveal data-reveal-delay="2" aria-hidden="true">
+          <article class="record">
+            <header class="record__head">
+              <span class="eyebrow eyebrow--bare mono">REGISTRY RECORD</span>
+              <span class="badge badge--verified badge--live"><span class="badge__dot"></span>Verified</span>
+            </header>
+            <hr class="registry-rule registry-rule--thin" />
+            <dl class="record__fields">
+              <div><dt>Work</dt><dd>“Midnight, Reworked” — master.wav</dd></div>
+              <div><dt>Author</dt><dd>Johnny Suede <span class="record__verify">✓</span></dd></div>
+              <div><dt>SHA-256</dt><dd class="mono record__hash">9f2a·c41b·7e08·…·d3a6</dd></div>
+              <div><dt>Registered</dt><dd class="mono tnum">2026-06-01 · 14:08 UTC</dd></div>
+              <div><dt>Chain</dt><dd>Base · block 21,904,118</dd></div>
+              <div><dt>License</dt><dd class="brass">CC-BY · commercial ✓</dd></div>
+            </dl>
+            <footer class="record__foot">
+              <span class="index-num">ERC-8004 · IDENTITY</span>
+              <span class="link">View on explorer →</span>
+            </footer>
+          </article>
+          <div class="record record--behind" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────── STATS / TRUST ─────────────────────────── -->
+    <section class="stats">
+      <div class="container stats__row">
+        <div class="stat" data-reveal>
+          <span class="stat__num mono"><span data-countup="12480" data-suffix="">0</span></span>
+          <span class="stat__label">Works registered</span>
+        </div>
+        <div class="stat" data-reveal data-reveal-delay="1">
+          <span class="stat__num mono">$<span data-countup="2.4" data-suffix="M">0</span></span>
+          <span class="stat__label">Licensing routed to creators</span>
+        </div>
+        <div class="stat" data-reveal data-reveal-delay="2">
+          <span class="stat__num mono"><span data-countup="3">0</span></span>
+          <span class="stat__label">Chains, one identity</span>
+        </div>
+        <div class="stat" data-reveal data-reveal-delay="3">
+          <span class="stat__num mono"><span data-countup="100">0</span>%</span>
+          <span class="stat__label">Author-owned, always</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────── FEATURES (panels) ─────────────────────────── -->
+    <section class="section features" id="rights">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">The registry, end to end</p>
+          <h2 class="section-head__title">From the moment you make it<br />to the moment it earns.</h2>
+        </div>
+
+        <div class="bento">
+          <article class="panel bento__feature" data-reveal>
+            <span class="index-num">01 / PROVENANCE</span>
+            <h3>A record that holds up</h3>
+            <p>Cryptographic hash, timestamp and author identity, written to chain
+              the instant you register. Not a claim — a proof, with a block number
+              anyone can check.</p>
+            <div class="bento__diagram" aria-hidden="true">
+              <span class="node">FILE</span>
+              <span class="wire"></span>
+              <span class="node node--cyan">HASH</span>
+              <span class="wire"></span>
+              <span class="node node--green">CHAIN ✓</span>
+            </div>
+          </article>
+
+          <article class="panel bento__cell" data-reveal data-reveal-delay="1">
+            <span class="index-num">02 / RIGHTS</span>
+            <h3>Licensing built in</h3>
+            <p>Attach machine-readable terms once. Every downstream use inherits
+              them — and routes payment back to you.</p>
+          </article>
+
+          <article class="panel bento__cell" data-reveal data-reveal-delay="2">
+            <span class="index-num">03 / AGENTS</span>
+            <h3>Agent-readable</h3>
+            <p>Your rights are exposed to autonomous buyers over open standards,
+              so deals close while you sleep.</p>
+          </article>
+
+          <article class="panel bento__wide" data-reveal>
+            <div>
+              <span class="index-num">04 / IDENTITY</span>
+              <h3>One identity, every chain</h3>
+              <p>An ERC-8004 author identity that follows the work across networks,
+                marketplaces and agents — reputation included.</p>
+            </div>
+            <div class="bento__chains" aria-hidden="true">
+              <span class="badge badge--registry"><span class="badge__dot"></span>Base</span>
+              <span class="badge badge--registry"><span class="badge__dot"></span>Mainnet</span>
+              <span class="badge badge--registry"><span class="badge__dot"></span>Solana</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────── HOW IT WORKS (steps) ─────────────────────────── -->
+    <section class="section section--tight steps" id="registry">
+      <div class="container steps__grid">
+        <div class="steps__intro" data-reveal>
+          <p class="eyebrow">Three moves</p>
+          <h2>Register in<br />the time it<br />takes to<br /><span class="cyan serif">save a file.</span></h2>
+        </div>
+        <ol class="steps__list">
+          <li data-reveal><span class="index-num">01</span><div><h4>Drop the work in</h4><p>Audio, image, text, model weights — anything with a hash. We never keep your file, only its fingerprint.</p></div></li>
+          <li data-reveal data-reveal-delay="1"><span class="index-num">02</span><div><h4>Sign as yourself</h4><p>Your wallet or passkey signs the record. That signature is the author claim, and it's yours alone.</p></div></li>
+          <li data-reveal data-reveal-delay="2"><span class="index-num">03</span><div><h4>It's on the registry</h4><p>A permanent, public, verifiable entry — with a license, a timestamp, and a link you can put in any contract.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────── CREAM band (manifesto, inverted) ─────────────────────────── -->
+    <section class="creed">
+      <div class="container creed__grid">
+        <p class="eyebrow eyebrow--brass" data-reveal>Why we built this</p>
+        <blockquote class="creed__quote" data-reveal data-reveal-delay="1">
+          The tools that <em>generate</em> got a decade head start.
+          The tools that prove <em>you</em> made something are the ones
+          that decide who gets paid.
+        </blockquote>
+        <div class="creed__byline" data-reveal data-reveal-delay="2">
+          <span class="index-num">— SUEDE LABS</span>
+          <a href="article.html" class="link">Read the thesis →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────── CTA ─────────────────────────── -->
+    <section class="cta">
+      <div class="container cta__inner" data-reveal>
+        <div>
+          <p class="eyebrow">Start the record</p>
+          <h2 class="cta__title">Make it provably yours.</h2>
+        </div>
+        <div class="cta__actions">
+          <a href="dashboard.html" class="btn btn--lg">Register your first work <span class="btn__arrow" aria-hidden="true">→</span></a>
+          <p class="cta__fine">Free for your first 5 registrations. No card required.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <hr class="registry-rule" aria-hidden="true" />
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <span class="wordmark"><span class="mark">S</span>Suede</span>
+        <p class="footer__tag">Proof of creation for the work you make.</p>
+        <div class="footer__badges">
+          <span class="badge badge--verified"><span class="badge__dot"></span>Audited</span>
+          <span class="badge badge--registry"><span class="badge__dot"></span>Open standard</span>
+        </div>
+      </div>
+      <nav class="footer__col" aria-label="Product">
+        <p class="footer__head">Registry</p>
+        <a href="#registry">How it works</a>
+        <a href="dashboard.html">The terminal</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="#">Explorer</a>
+      </nav>
+      <nav class="footer__col" aria-label="Developers">
+        <p class="footer__head">Developers</p>
+        <a href="article.html">Docs</a>
+        <a href="#">ERC-8004</a>
+        <a href="#">API</a>
+      </nav>
+      <nav class="footer__col" aria-label="Company">
+        <p class="footer__head">Company</p>
+        <a href="#">About</a>
+        <a href="#">Manifesto</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
+    <div class="container footer__base">
+      <span>© <span data-year>2026</span> Suede Labs. Set in Instrument Serif &amp; Manrope.</span>
+      <span class="index-num">SUEDE TEMPLATE · 01/04</span>
+    </div>
+  </footer>
+
+  <script src="../shared/reveal.js" defer></script>
+</body>
+</html>

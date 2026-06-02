@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Suede Registry — protocol overview · Suede Docs</title>
+  <meta name="description" content="Protocol specification for the Suede Registry. ERC-8004 author identity, on-chain provenance, and machine-readable rights — the open standard for IP proof." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="styles/tokens.css" />
+  <link rel="stylesheet" href="styles/article.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="gridlines" aria-hidden="true"></div>
+  <hr class="registry-rule registry-rule--top" aria-hidden="true" />
+
+  <header class="site-header" data-header>
+    <div class="container site-header__inner">
+      <a class="wordmark" href="index.html"><span class="mark">S</span>Suede</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html#registry">Registry</a>
+        <a href="index.html#rights">Rights</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="article.html" aria-current="page">Docs</a>
+        <span class="nav__sep" aria-hidden="true"></span>
+        <a href="#" class="link">Sign in</a>
+        <a href="dashboard.html" class="btn">Open the terminal <span class="btn__arrow" aria-hidden="true">→</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ─────────────────────────── DOC MASTHEAD ─────────────────────────── -->
+    <section class="doc-masthead section--tight">
+      <div class="container">
+        <p class="eyebrow" data-reveal>Protocol · v1.0</p>
+        <h1 class="doc-masthead__title" data-reveal data-reveal-delay="1">
+          The Suede Registry —<br />protocol overview
+        </h1>
+        <p class="lede doc-masthead__lede" data-reveal data-reveal-delay="2">
+          A precise definition of how authorship records are structured, committed, and
+          queried on the Suede Registry. Covers the ERC-8004 identity model, the
+          hashing and timestamping pipeline, machine-readable license terms, and the
+          APIs used by autonomous agents to negotiate use.
+        </p>
+        <div class="doc-masthead__badges" data-reveal data-reveal-delay="3">
+          <span class="badge badge--registry"><span class="badge__dot"></span>ERC-8004</span>
+          <span class="badge badge--verified"><span class="badge__dot"></span>Audited</span>
+          <span class="badge badge--license"><span class="badge__dot"></span>Open standard</span>
+          <span class="badge badge--rights"><span class="badge__dot"></span>Rights-preserving</span>
+        </div>
+        <hr class="registry-rule registry-rule--thin doc-masthead__rule" data-reveal data-reveal-delay="4" aria-hidden="true" />
+      </div>
+    </section>
+
+    <!-- ─────────────────────────── DOCS BODY ─────────────────────────── -->
+    <section class="docs-body">
+      <div class="container docs-layout">
+
+        <!-- ── Sticky TOC sidebar ── -->
+        <aside class="docs-toc" aria-label="On this page">
+          <nav class="toc-nav" aria-label="On this page">
+            <p class="toc-nav__label">On this page</p>
+            <ol class="toc-nav__list">
+              <li><a href="#overview" class="toc-nav__link is-active">Overview</a></li>
+              <li><a href="#identity-model" class="toc-nav__link">Identity model</a></li>
+              <li><a href="#record-structure" class="toc-nav__link">Record structure</a></li>
+              <li><a href="#hashing-pipeline" class="toc-nav__link">Hashing pipeline</a></li>
+              <li><a href="#license-terms" class="toc-nav__link">License terms</a></li>
+              <li><a href="#agent-api" class="toc-nav__link">Agent API</a></li>
+              <li><a href="#cli-reference" class="toc-nav__link">CLI reference</a></li>
+              <li><a href="#next-steps" class="toc-nav__link">Next steps</a></li>
+            </ol>
+          </nav>
+        </aside>
+
+        <!-- ── Main reading column ── -->
+        <article class="docs-content">
+
+          <!-- ─ Section: Overview ─ -->
+          <div class="docs-section" id="overview" data-reveal>
+            <h2>Overview</h2>
+            <p>
+              The Suede Registry is a permissionless authorship ledger. When a creator registers
+              a work, three things happen atomically: a <strong>cryptographic fingerprint</strong>
+              of the file is recorded, an <strong>ERC-8004 author identity</strong> is bound to
+              that fingerprint, and a <strong>machine-readable license record</strong> is attached.
+              The resulting entry is permanent, inspectable, and agent-readable.
+            </p>
+            <p>
+              The registry does not store the work itself — only its fingerprint and provenance
+              metadata. Storage is the creator's concern. Proof is the registry's.
+            </p>
+
+            <div class="callout callout--note">
+              <p class="callout__label cyan mono">Note</p>
+              <p>
+                This document describes the v1.0 protocol. All field names and on-chain structures
+                are stable. The agent API is in release candidate status; minor additions
+                are expected before general availability.
+              </p>
+            </div>
+          </div>
+
+          <hr class="registry-rule registry-rule--thin docs-rule" aria-hidden="true" />
+
+          <!-- ─ Section: Identity model ─ -->
+          <div class="docs-section" id="identity-model" data-reveal>
+            <h2>Identity model</h2>
+            <p>
+              Every author on the Suede Registry holds an <strong>ERC-8004 identity</strong> —
+              a sovereign, chain-agnostic claim of authorship that travels with the work
+              across networks and marketplaces. The identity is not a username; it is a
+              cryptographic binding between a public key, a human-readable author handle,
+              and the works attributed to that key.
+            </p>
+            <h3>Author identity vs. wallet address</h3>
+            <p>
+              A wallet address is a payment destination. An author identity is a reputational
+              record. The two are linked during registration but are deliberately separate:
+              you can rotate your payment key without invalidating your authorship record,
+              and you can present your author identity without disclosing your wallet.
+            </p>
+            <p>
+              Identity records are indexed by the registry's resolver and exposed over a
+              standard REST and GraphQL interface — the same surface that autonomous agents
+              query when evaluating a work for licensing.
+            </p>
+
+            <div class="callout callout--spec">
+              <p class="callout__label brass mono">Spec</p>
+              <p>
+                ERC-8004 defines <code>IDENTITY</code>, <code>REPUTATION</code>, and
+                <code>VALIDATION</code> roles. The Suede Registry implements all three.
+                Third-party resolvers implementing only <code>IDENTITY</code> are
+                considered partially conformant.
+              </p>
+            </div>
+          </div>
+
+          <!-- ─ Section: Record structure ─ -->
+          <div class="docs-section" id="record-structure" data-reveal>
+            <h2>Record structure</h2>
+            <p>
+              Each registry entry is serialized as a JSON document before being hashed and
+              committed on-chain. The canonical shape is defined below.
+            </p>
+
+            <!-- Code block 1: registry record JSON -->
+            <figure class="code-block">
+              <figcaption class="code-block__label">registry-record.json</figcaption>
+              <pre><code><span class="tok-brace">{</span>
+  <span class="tok-key">"schema"</span><span class="tok-punct">:</span>    <span class="tok-str">"suede/registry/v1"</span><span class="tok-punct">,</span>
+  <span class="tok-key">"id"</span><span class="tok-punct">:</span>        <span class="tok-str">"sreg_01HXQ7BK8VD9Z4M2C5PJ6RFN3W"</span><span class="tok-punct">,</span>
+  <span class="tok-key">"work"</span><span class="tok-punct">:</span> <span class="tok-brace">{</span>
+    <span class="tok-key">"title"</span><span class="tok-punct">:</span>   <span class="tok-str">"Midnight, Reworked"</span><span class="tok-punct">,</span>
+    <span class="tok-key">"type"</span><span class="tok-punct">:</span>    <span class="tok-str">"audio/wav"</span><span class="tok-punct">,</span>
+    <span class="tok-key">"sha256"</span><span class="tok-punct">:</span>  <span class="tok-cyan">"9f2ac41b7e08d3a6b4f9e1c87a2d0561b3e8f4c9a7d2e0b5f1c8a4e7d3b0f6c2"</span>
+  <span class="tok-brace">}</span><span class="tok-punct">,</span>
+  <span class="tok-key">"author"</span><span class="tok-punct">:</span> <span class="tok-brace">{</span>
+    <span class="tok-key">"identity"</span><span class="tok-punct">:</span>  <span class="tok-str">"did:suede:base:0x4a8f…d7c2"</span><span class="tok-punct">,</span>
+    <span class="tok-key">"handle"</span><span class="tok-punct">:</span>    <span class="tok-str">"johnny-suede"</span><span class="tok-punct">,</span>
+    <span class="tok-key">"pubkey"</span><span class="tok-punct">:</span>    <span class="tok-cyan">"0x04e9a3…b81f"</span>
+  <span class="tok-brace">}</span><span class="tok-punct">,</span>
+  <span class="tok-key">"timestamp"</span><span class="tok-punct">:</span>   <span class="tok-green">"2026-06-01T14:08:33Z"</span><span class="tok-punct">,</span>
+  <span class="tok-key">"chain"</span><span class="tok-punct">:</span> <span class="tok-brace">{</span>
+    <span class="tok-key">"network"</span><span class="tok-punct">:</span>  <span class="tok-str">"base"</span><span class="tok-punct">,</span>
+    <span class="tok-key">"block"</span><span class="tok-punct">:</span>    <span class="tok-green">21904118</span><span class="tok-punct">,</span>
+    <span class="tok-key">"tx"</span><span class="tok-punct">:</span>       <span class="tok-cyan">"0x7c4b…a9e1"</span>
+  <span class="tok-brace">}</span><span class="tok-punct">,</span>
+  <span class="tok-key">"license"</span><span class="tok-punct">:</span> <span class="tok-brace">{</span>
+    <span class="tok-key">"spdx"</span><span class="tok-punct">:</span>       <span class="tok-brass">"CC-BY-4.0"</span><span class="tok-punct">,</span>
+    <span class="tok-key">"commercial"</span><span class="tok-punct">:</span> <span class="tok-green">true</span><span class="tok-punct">,</span>
+    <span class="tok-key">"derivatives"</span><span class="tok-punct">:</span><span class="tok-green">true</span><span class="tok-punct">,</span>
+    <span class="tok-key">"royalty_bps"</span><span class="tok-punct">:</span><span class="tok-green">500</span>
+  <span class="tok-brace">}</span>
+<span class="tok-brace">}</span></code></pre>
+            </figure>
+
+            <h3>Field reference</h3>
+
+            <div class="field-table-wrap">
+              <table class="field-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Field</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="field-table__name cyan mono">schema</td>
+                    <td class="field-table__type mono muted">string</td>
+                    <td>Protocol version identifier. Always <code>suede/registry/v1</code> for this revision.</td>
+                  </tr>
+                  <tr>
+                    <td class="field-table__name cyan mono">id</td>
+                    <td class="field-table__type mono muted">string (ULID)</td>
+                    <td>Globally unique record identifier, sortable by creation time.</td>
+                  </tr>
+                  <tr>
+                    <td class="field-table__name cyan mono">work.sha256</td>
+                    <td class="field-table__type mono muted">hex string</td>
+                    <td>SHA-256 digest of the original file bytes. This is the canonical fingerprint.</td>
+                  </tr>
+                  <tr>
+                    <td class="field-table__name cyan mono">author.identity</td>
+                    <td class="field-table__type mono muted">DID string</td>
+                    <td>The author's ERC-8004 decentralized identifier. Resolvable via the Suede resolver.</td>
+                  </tr>
+                  <tr>
+                    <td class="field-table__name cyan mono">timestamp</td>
+                    <td class="field-table__type mono muted">ISO 8601</td>
+                    <td>UTC time at which the registration transaction was included in a block.</td>
+                  </tr>
+                  <tr>
+                    <td class="field-table__name cyan mono">chain.block</td>
+                    <td class="field-table__type mono muted">integer</td>
+                    <td>Block number of the registration transaction. Verifiable against the chain explorer.</td>
+                  </tr>
+                  <tr>
+                    <td class="field-table__name cyan mono">license.spdx</td>
+                    <td class="field-table__type mono muted">SPDX ID</td>
+                    <td>Machine-readable license expression. Agents parse this field for use-rights evaluation.</td>
+                  </tr>
+                  <tr>
+                    <td class="field-table__name cyan mono">license.royalty_bps</td>
+                    <td class="field-table__type mono muted">integer</td>
+                    <td>Royalty rate in basis points (100 bps = 1%). Enforced on-chain for commercial uses.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <hr class="registry-rule registry-rule--thin docs-rule" aria-hidden="true" />
+
+          <!-- ─ Section: Hashing pipeline ─ -->
+          <div class="docs-section" id="hashing-pipeline" data-reveal>
+            <h2>Hashing pipeline</h2>
+            <p>
+              Before any record is committed, the file passes through a deterministic
+              normalization pipeline. This ensures that two independently computed hashes
+              of the same work — regardless of container format or metadata tags —
+              produce an identical fingerprint.
+            </p>
+            <ol class="docs-list">
+              <li><strong>Strip mutable metadata.</strong> Audio ID3 tags, EXIF fields, and
+                document author properties are extracted and stored separately. They do not
+                contribute to the hash.</li>
+              <li><strong>Normalize byte order.</strong> For formats with endian-variant
+                encoding (e.g. WAV chunks), the normalizer rewrites to little-endian before
+                hashing.</li>
+              <li><strong>SHA-256 over raw content bytes.</strong> The hash is computed
+                over the normalized payload, not the file wrapper.</li>
+              <li><strong>Encode as hex.</strong> 64-character lowercase hex string, stored
+                verbatim in the record.</li>
+            </ol>
+
+            <div class="callout callout--caution">
+              <p class="callout__label red mono">Caution</p>
+              <p>
+                Transcoding a lossy file (e.g. MP3 → WAV → MP3) will produce a different
+                hash than the original, even if the audio content sounds identical.
+                Always register the source master — not a derivative export.
+              </p>
+            </div>
+          </div>
+
+          <!-- ─ Section: License terms ─ -->
+          <div class="docs-section" id="license-terms" data-reveal>
+            <h2>License terms</h2>
+            <p>
+              License terms are attached at registration and encoded directly in the
+              on-chain record. They are immutable once set; a creator wishing to change
+              terms must register a superseding record and link it to the original via
+              the <code>supersedes</code> field.
+            </p>
+            <p>
+              The registry accepts any SPDX expression as the <code>license.spdx</code>
+              value. For compound terms — such as non-commercial for individual use,
+              commercial with royalties for enterprise — use the SPDX
+              <code>WITH</code> operator. The Suede resolver exposes a
+              <code>rights.evaluate(context)</code> method that agents call to get a
+              binary decision for a given use context.
+            </p>
+          </div>
+
+          <hr class="registry-rule registry-rule--thin docs-rule" aria-hidden="true" />
+
+          <!-- ─ Section: Agent API ─ -->
+          <div class="docs-section" id="agent-api" data-reveal>
+            <h2>Agent API</h2>
+            <p>
+              Autonomous agents — trading bots, content pipelines, AI training
+              orchestrators — interact with the registry through a structured
+              JSON-over-HTTP API. No wallet connection is required to query records;
+              write operations require a signed ERC-8004 message.
+            </p>
+            <h3>Resolving a work by fingerprint</h3>
+            <p>
+              Given a SHA-256 hash of a file, the resolver returns the matching registry
+              record, including the license terms and the author's identity DID. Agents
+              use this to determine whether use is permitted before processing the asset.
+            </p>
+          </div>
+
+          <!-- ─ Section: CLI reference ─ -->
+          <div class="docs-section" id="cli-reference" data-reveal>
+            <h2>CLI reference</h2>
+            <p>
+              The Suede CLI provides a one-command interface for creators registering
+              works from the terminal. It handles normalization, signing, and submission
+              without exposing private keys to the network.
+            </p>
+
+            <!-- Code block 2: CLI commands -->
+            <figure class="code-block">
+              <figcaption class="code-block__label">terminal</figcaption>
+              <pre><code><span class="tok-comment"># Install</span>
+<span class="tok-green">npm</span> install <span class="tok-cyan">-g</span> @suede/cli
+
+<span class="tok-comment"># Register a work with a license</span>
+<span class="tok-green">suede</span> register ./master.wav <span class="tok-cyan">--license</span> CC-BY
+
+<span class="tok-comment"># Register with commercial royalty (5%)</span>
+<span class="tok-green">suede</span> register ./master.wav <span class="tok-cyan">--license</span> CC-BY <span class="tok-cyan">--royalty-bps</span> <span class="tok-green">500</span>
+
+<span class="tok-comment"># Resolve a work by its SHA-256 fingerprint</span>
+<span class="tok-green">suede</span> resolve <span class="tok-cyan">9f2ac41b7e08d3a6…</span>
+
+<span class="tok-comment"># Verify a local file against its on-chain record</span>
+<span class="tok-green">suede</span> verify ./master.wav</code></pre>
+            </figure>
+
+            <div class="callout callout--note">
+              <p class="callout__label cyan mono">Note</p>
+              <p>
+                The CLI never uploads your file. It computes the fingerprint locally and
+                submits only the hash, metadata, and your signature. The signing key stays
+                on your machine or in your connected hardware wallet.
+              </p>
+            </div>
+          </div>
+
+          <!-- ─ Section: Next steps ─ -->
+          <div class="docs-section" id="next-steps" data-reveal>
+            <h2>Next steps</h2>
+            <p>Continue reading the protocol documentation or start registering works.</p>
+          </div>
+
+          <!-- ─ End matter: next-in-docs ─ -->
+          <nav class="docs-next" aria-label="Next in the docs" data-reveal>
+            <p class="docs-next__head mono muted">Continue reading</p>
+            <div class="docs-next__links">
+              <a href="#" class="docs-next__item panel">
+                <span class="docs-next__arrow cyan" aria-hidden="true">→</span>
+                <span>
+                  <strong>ERC-8004 specification</strong>
+                  <span class="muted">The full identity standard, authored by Suede Labs.</span>
+                </span>
+              </a>
+              <a href="#" class="docs-next__item panel">
+                <span class="docs-next__arrow cyan" aria-hidden="true">→</span>
+                <span>
+                  <strong>Agent API reference</strong>
+                  <span class="muted">Full endpoint listing, authentication, and rate limits.</span>
+                </span>
+              </a>
+              <a href="dashboard.html" class="docs-next__item panel">
+                <span class="docs-next__arrow green" aria-hidden="true">→</span>
+                <span>
+                  <strong>Register your first work</strong>
+                  <span class="muted">Open the terminal and create your first registry record.</span>
+                </span>
+              </a>
+            </div>
+          </nav>
+
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <hr class="registry-rule" aria-hidden="true" />
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <span class="wordmark"><span class="mark">S</span>Suede</span>
+        <p class="footer__tag">Proof of creation for the work you make.</p>
+        <div class="footer__badges">
+          <span class="badge badge--verified"><span class="badge__dot"></span>Audited</span>
+          <span class="badge badge--registry"><span class="badge__dot"></span>Open standard</span>
+        </div>
+      </div>
+      <nav class="footer__col" aria-label="Registry">
+        <p class="footer__head">Registry</p>
+        <a href="index.html#registry">How it works</a>
+        <a href="dashboard.html">The terminal</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="#">Explorer</a>
+      </nav>
+      <nav class="footer__col" aria-label="Developers">
+        <p class="footer__head">Developers</p>
+        <a href="article.html" aria-current="page">Docs</a>
+        <a href="#">ERC-8004</a>
+        <a href="#">API</a>
+      </nav>
+      <nav class="footer__col" aria-label="Company">
+        <p class="footer__head">Company</p>
+        <a href="#">About</a>
+        <a href="#">Manifesto</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
+    <div class="container footer__base">
+      <span>© <span data-year>2026</span> Suede Labs. Set in Instrument Serif &amp; Manrope.</span>
+      <span class="index-num">SUEDE TEMPLATE · 02/04</span>
+    </div>
+  </footer>
+
+  <script src="../shared/reveal.js" defer></script>
+</body>
+</html>

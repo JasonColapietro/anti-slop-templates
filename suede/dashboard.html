@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registry Terminal — Suede</title>
+  <meta name="description" content="The Suede terminal: registrations, provenance, licensing and your on-chain author identity." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="styles/tokens.css" />
+  <link rel="stylesheet" href="styles/dashboard.css" />
+</head>
+<body class="app">
+  <a class="skip-link" href="#terminal">Skip to content</a>
+  <div class="gridlines" aria-hidden="true"></div>
+
+  <div class="shell">
+    <!-- ───────────── Sidebar ───────────── -->
+    <aside class="side" aria-label="Workspace">
+      <a class="wordmark side__brand" href="index.html"><span class="mark">S</span>Suede</a>
+
+      <a href="#" class="btn side__new">Register work <span class="btn__arrow" aria-hidden="true">＋</span></a>
+
+      <nav class="side__nav" aria-label="Primary">
+        <a href="#terminal" class="side__link is-active" aria-current="page"><span>Terminal</span></a>
+        <a href="#"><span>Registry</span><span class="side__count mono">128</span></a>
+        <a href="#"><span>Rights</span><span class="side__count mono">42</span></a>
+        <a href="#"><span>Licenses</span><span class="side__count mono">17</span></a>
+        <a href="#"><span>Earnings</span></a>
+        <a href="#"><span>Agents</span><span class="badge badge--verified badge--live side__live"><span class="badge__dot"></span></span></a>
+      </nav>
+
+      <div class="side__group">
+        <p class="side__head">Recent records</p>
+        <ul class="side__pins">
+          <li><a href="#"><span class="badge__dot rec-dot rec-dot--ok" aria-hidden="true"></span><span class="side__pin-title">Midnight, Reworked</span><span class="side__pin-meta mono">✓</span></a></li>
+          <li><a href="#"><span class="badge__dot rec-dot rec-dot--ok" aria-hidden="true"></span><span class="side__pin-title">Cover art — v3</span><span class="side__pin-meta mono">✓</span></a></li>
+          <li><a href="#"><span class="badge__dot rec-dot rec-dot--pending" aria-hidden="true"></span><span class="side__pin-title">Stems pack</span><span class="side__pin-meta mono">…</span></a></li>
+        </ul>
+      </div>
+
+      <div class="side__user">
+        <span class="ident" aria-hidden="true"></span>
+        <span class="side__user-name">johnny.suede<small class="mono">0x66ad…412e</small></span>
+        <a href="#" class="side__cog" aria-label="Settings">⚙</a>
+      </div>
+    </aside>
+
+    <!-- ───────────── Main ───────────── -->
+    <main class="main" id="terminal">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Registry terminal</p>
+          <h1 class="topbar__title">Welcome back, Johnny.</h1>
+        </div>
+        <div class="topbar__tools">
+          <label class="search">
+            <span class="search__icon" aria-hidden="true">⌕</span>
+            <input type="search" placeholder="Search hash, work or author…" aria-label="Search the registry" />
+            <kbd class="search__kbd">/</kbd>
+          </label>
+          <span class="badge badge--verified badge--live"><span class="badge__dot"></span>Wallet connected</span>
+        </div>
+      </header>
+
+      <!-- Stat band -->
+      <section class="statband" aria-label="Registry overview">
+        <div class="metric" data-reveal>
+          <p class="metric__label">Works registered</p>
+          <p class="metric__value mono tnum"><span data-countup="128">0</span></p>
+          <p class="metric__trend up mono">▲ 9 this month</p>
+        </div>
+        <div class="metric" data-reveal data-reveal-delay="1">
+          <p class="metric__label">Verified on-chain</p>
+          <p class="metric__value mono tnum"><span data-countup="124">0</span></p>
+          <p class="metric__trend mono dim">4 pending</p>
+        </div>
+        <div class="metric" data-reveal data-reveal-delay="2">
+          <p class="metric__label">Licensing earned</p>
+          <p class="metric__value mono tnum">$<span data-countup="18.4" data-suffix="k">0</span></p>
+          <p class="metric__trend up mono">▲ $2.1k this week</p>
+        </div>
+        <div class="metric" data-reveal data-reveal-delay="3">
+          <p class="metric__label">Active agents</p>
+          <p class="metric__value mono tnum">3</p>
+          <p class="metric__trend up mono">▲ 22 deals closed</p>
+        </div>
+      </section>
+
+      <div class="grid">
+        <!-- Left column -->
+        <div class="grid__main">
+          <!-- Area chart: registrations over time -->
+          <section class="panel panel-pad chartcard" data-reveal>
+            <header class="card-head">
+              <div>
+                <p class="eyebrow">Provenance</p>
+                <h2 class="card-title">Registrations · last 9 months</h2>
+              </div>
+              <div class="chart-legend mono">
+                <span class="chart-legend__key"><i class="swatch swatch--cyan"></i>On-chain</span>
+                <span class="chart-aside">peak 610</span>
+              </div>
+            </header>
+
+            <div class="areachart">
+              <svg viewBox="0 0 720 240" role="img" aria-label="Monthly registrations rising from 180 in month one to 610 in month nine.">
+                <defs>
+                  <linearGradient id="fill" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="var(--cyan)" stop-opacity="0.32" />
+                    <stop offset="100%" stop-color="var(--cyan)" stop-opacity="0" />
+                  </linearGradient>
+                </defs>
+                <!-- gridlines -->
+                <g class="ac-grid">
+                  <line x1="0" y1="40"  x2="720" y2="40" />
+                  <line x1="0" y1="80"  x2="720" y2="80" />
+                  <line x1="0" y1="120" x2="720" y2="120" />
+                  <line x1="0" y1="160" x2="720" y2="160" />
+                  <line x1="0" y1="200" x2="720" y2="200" />
+                </g>
+                <!-- area + line -->
+                <path class="ac-area" d="M20,149 L105,133 L190,141 L275,110 L360,93 L445,102 L530,71 L615,54 L700,28 L700,200 L20,200 Z" fill="url(#fill)" />
+                <path class="ac-line" d="M20,149 L105,133 L190,141 L275,110 L360,93 L445,102 L530,71 L615,54 L700,28" />
+                <!-- points -->
+                <g class="ac-dots">
+                  <circle cx="20"  cy="149" r="3" /><circle cx="105" cy="133" r="3" />
+                  <circle cx="190" cy="141" r="3" /><circle cx="275" cy="110" r="3" />
+                  <circle cx="360" cy="93"  r="3" /><circle cx="445" cy="102" r="3" />
+                  <circle cx="530" cy="71"  r="3" /><circle cx="615" cy="54"  r="3" />
+                </g>
+                <circle class="ac-dot-last" cx="700" cy="28" r="5" />
+              </svg>
+              <ol class="chart__labels mono" aria-hidden="true">
+                <li>Sep</li><li>Oct</li><li>Nov</li><li>Dec</li><li>Jan</li><li>Feb</li><li>Mar</li><li>Apr</li><li>May</li>
+              </ol>
+            </div>
+          </section>
+
+          <!-- Records table -->
+          <section class="panel panel-pad" data-reveal data-reveal-delay="1">
+            <header class="card-head">
+              <div>
+                <p class="eyebrow">Ledger</p>
+                <h2 class="card-title">Latest records</h2>
+              </div>
+              <a href="#" class="link">Full registry →</a>
+            </header>
+            <table class="records">
+              <thead>
+                <tr><th scope="col">Work</th><th scope="col">Hash</th><th scope="col">Chain</th><th scope="col">Status</th><th scope="col" class="num">Time</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row" class="records__title">Midnight, Reworked</th>
+                  <td class="mono cyan">9f2a·c41b</td>
+                  <td class="mono">Base</td>
+                  <td><span class="badge badge--verified"><span class="badge__dot"></span>Verified</span></td>
+                  <td class="num mono">14:08</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="records__title">Cover art — v3</th>
+                  <td class="mono cyan">3b71·9d20</td>
+                  <td class="mono">Base</td>
+                  <td><span class="badge badge--verified"><span class="badge__dot"></span>Verified</span></td>
+                  <td class="num mono">11:24</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="records__title">Stems pack — 12 files</th>
+                  <td class="mono cyan">a0e8·77fc</td>
+                  <td class="mono">Base</td>
+                  <td><span class="badge"><span class="badge__dot"></span>Pending</span></td>
+                  <td class="num mono">10:51</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="records__title">Liner notes (text)</th>
+                  <td class="mono cyan">c41d·2a90</td>
+                  <td class="mono">Mainnet</td>
+                  <td><span class="badge badge--verified"><span class="badge__dot"></span>Verified</span></td>
+                  <td class="num mono">Yest.</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </div>
+
+        <!-- Right rail -->
+        <div class="grid__rail">
+          <!-- Identity card (echoes the record card) -->
+          <section class="panel panel-pad idcard" data-reveal data-reveal-delay="1">
+            <header class="idcard__head">
+              <span class="ident ident--lg" aria-hidden="true"></span>
+              <div>
+                <p class="idcard__handle">johnny.suede</p>
+                <p class="idcard__addr mono">0x66ad…412e</p>
+              </div>
+              <span class="badge badge--verified"><span class="badge__dot"></span>Verified</span>
+            </header>
+            <hr class="registry-rule registry-rule--thin" />
+            <dl class="idcard__stats">
+              <div><dt>Reputation</dt><dd class="mono tnum">98<span class="dim">/100</span></dd></div>
+              <div><dt>Standard</dt><dd class="mono">ERC-8004</dd></div>
+              <div><dt>Chains</dt><dd class="idcard__chains"><span class="badge badge--registry"><span class="badge__dot"></span>Base</span><span class="badge badge--registry"><span class="badge__dot"></span>Mainnet</span></dd></div>
+            </dl>
+            <a href="#" class="btn btn--ghost idcard__btn">View identity <span class="btn__arrow" aria-hidden="true">→</span></a>
+          </section>
+
+          <!-- Licensing / earnings -->
+          <section class="panel panel-pad" data-reveal data-reveal-delay="2">
+            <header class="card-head card-head--tight">
+              <div>
+                <p class="eyebrow eyebrow--brass">Licensing</p>
+                <h2 class="card-title">Recent payouts</h2>
+              </div>
+            </header>
+            <ol class="payouts">
+              <li><span class="payouts__src">“Midnight” · sync license<small class="mono">via agent · 14:02</small></span><span class="payouts__amt green mono">+$420</span></li>
+              <li><span class="payouts__src">Cover art · commercial<small class="mono">marketplace · 09:30</small></span><span class="payouts__amt green mono">+$180</span></li>
+              <li><span class="payouts__src">“Midnight” · stream royalty<small class="mono">batch · Yest.</small></span><span class="payouts__amt green mono">+$1,540</span></li>
+            </ol>
+            <hr class="rule" />
+            <p class="payouts__total"><span>This week</span><span class="mono tnum">$2,140</span></p>
+          </section>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="../shared/reveal.js" defer></script>
+</body>
+</html>

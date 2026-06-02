@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Friction Is the Point — Folio Journal</title>
+  <meta name="description" content="Writing software shouldn't write for you. On the difference between a tool that assists and one that supplants, and why the resistance matters." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..560&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="styles/tokens.css" />
+  <link rel="stylesheet" href="styles/article.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="site-header" data-header>
+    <div class="container site-header__inner">
+      <a class="wordmark" href="index.html">Folio<span class="dot">.</span></a>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html#craft">Craft</a>
+        <a href="index.html#features">Features</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="article.html" aria-current="page">Journal</a>
+        <span class="nav__sep" aria-hidden="true"></span>
+        <a href="#" class="link">Sign in</a>
+        <a href="#" class="btn">Start writing <span class="btn__arrow" aria-hidden="true">→</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <article>
+
+      <!-- ─────────────────────────── MASTHEAD ─────────────────────────── -->
+      <header class="article-masthead section--tight">
+        <div class="container">
+          <div data-reveal>
+            <p class="eyebrow">Field notes · Nº&#8202;03</p>
+            <span class="tag tag--accent" style="margin-left: var(--space-sm)">Manifesto</span>
+          </div>
+          <h1 class="article-masthead__title" data-reveal data-reveal-delay="1">
+            The Friction<br /><em>Is the Point</em>
+          </h1>
+          <p class="lede article-masthead__lede" data-reveal data-reveal-delay="2">
+            Writing software shouldn't write for you. On the difference between
+            a tool that assists and one that supplants — and why the resistance matters more
+            than the output.
+          </p>
+          <div class="byline-row" data-reveal data-reveal-delay="3">
+            <div class="article-masthead__byline">
+              <span class="byline__author">M. Calloway</span>
+              <span class="byline__sep" aria-hidden="true"></span>
+              <span class="byline__detail">June&#x202F;01,&#x202F;2026</span>
+              <span class="byline__sep" aria-hidden="true"></span>
+              <span class="byline__detail">12 min read</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- ─────────────────────────── BODY + MARGINALIA ─────────────────────────── -->
+      <div class="article-layout container">
+
+        <!-- SECTION ONE -->
+        <div class="article-body prose" data-reveal>
+          <p>
+            <span class="dropcap">T</span>here is a gesture every writer learns
+            to distrust: the second paragraph that arrives too easily. Not the
+            one earned after four attempts and a walk around the block, but the one
+            that simply materialises — fluent, competent, depressingly complete.
+            This is the paragraph the new writing software is so eager to provide.
+            It arrives before you knew what you wanted to say, which is precisely
+            the problem.
+          </p>
+          <p>
+            We have spent the last several years watching the tools of composition
+            absorb the work of composition. Autocomplete was the mild version: a
+            word at the edge of your thought, offered up. What exists now is
+            something different in kind. The software no longer finishes your
+            sentences; it begins them. It proposes your argument, selects your
+            tone, and, if you allow it, writes the whole thing while you watch —
+            a stenographer for ideas you hadn't quite had yet.
+          </p>
+        </div>
+
+        <!-- First marginalia note, floated into the right column -->
+        <aside class="article-aside" aria-label="Side note" data-reveal data-reveal-delay="2">
+          <div class="marginal">
+            <div class="marginal__rule" aria-hidden="true"></div>
+            <p class="marginal__text">
+              The stenographer metaphor first appeared in a 1971 essay on Dictaphones
+              and literary voice — it has never been more apt.
+            </p>
+          </div>
+        </aside>
+
+        <!-- PULL QUOTE — spans body + margin columns -->
+        <div class="article-pullquote" data-reveal>
+          <blockquote class="pullquote">
+            <p class="pullquote__text">
+              "The tools we use to write<br />are quietly deciding<br /><em>who does the writing.</em>"
+            </p>
+          </blockquote>
+        </div>
+
+        <!-- SECTION TWO: h2 -->
+        <div class="article-body prose" data-reveal>
+          <h2>What assistance actually means</h2>
+          <p>
+            There is a real distinction between a tool that makes space for thought
+            and one that fills it. A sharpened pencil is assistance. A spellchecker
+            is assistance. Even a thesaurus, consulted in the right spirit, is
+            assistance — it names a thing that was already forming in you, just out
+            of reach. The new generation of writing tools are doing something else.
+            They are not clarifying your intention; they are replacing it with a
+            convincing approximation.
+          </p>
+          <p>
+            The approximation is the problem. Not the quality of it — you can
+            usually tell — but what it does to the process. Every draft you accept
+            from a language model is a draft you didn't write. Every sentence that
+            comes pre-composed is a sentence you never had to inhabit. The inhabiting
+            is the work. It is where the thing you're making becomes yours, becomes
+            specific, becomes — against all odds — true.
+          </p>
+
+          <h3>The economy of effort</h3>
+          <p>
+            Defenders of AI-assisted writing often reach for the efficiency
+            argument: we already use calculators for arithmetic; why not use
+            language models for language? But the arithmetic analogy breaks down
+            almost immediately. When you let a calculator multiply large numbers,
+            you lose nothing except tedium. When you let a language model draft
+            your paragraph, you lose the struggle — and the struggle is where most
+            of the thinking happens.
+          </p>
+          <p>
+            This is not a romantic position about suffering. It is a practical one
+            about how meaning actually gets made. The writer who cannot produce a
+            sentence without assistance is, functionally, not producing sentences
+            at all. They are curating them, which is a different activity, with
+            different muscles, different outcomes, and a different relationship
+            to the page.
+          </p>
+
+          <!-- Cited blockquote -->
+          <blockquote cite="https://www.newyorker.com/magazine/1974/12/23">
+            <p>
+              "A writer only begins a book. A reader finishes it. The author's
+              job is to be specific enough that the reader's imagination has
+              something real to work against."
+            </p>
+            <cite>— John Updike, Paris Review, 1974</cite>
+          </blockquote>
+        </div>
+
+        <!-- Second marginalia note -->
+        <aside class="article-aside" aria-label="Side note" data-reveal data-reveal-delay="1">
+          <div class="marginal">
+            <div class="marginal__rule" aria-hidden="true"></div>
+            <p class="marginal__text">
+              Updike wrote by hand until 1981, then switched to a Kaypro II running
+              WordStar. He reportedly never used its search-and-replace function,
+              preferring to re-read the entire document to locate a word.
+            </p>
+          </div>
+        </aside>
+
+        <!-- SECTION THREE -->
+        <div class="article-body prose" data-reveal>
+          <h2>The case for resistance</h2>
+          <p>
+            Folio is, admittedly, writing software. We are not arguing against
+            writing software. We are arguing for a specific kind of relationship
+            between the writer and the tool — one in which the tool withholds
+            rather than provides. Not perversely, not as an ideological gesture,
+            but because there are things a writer needs to do for themselves that
+            the tool cannot do without doing harm.
+          </p>
+          <p>
+            Here is what we believe a writing tool should do: it should set
+            type beautifully, because the look of the sentence affects how you
+            feel about it while writing, which affects what you write. It should
+            keep the draft safe and local, because nothing interrupts thought
+            like the anxiety of loss. It should stay out of the way — not hide
+            itself theatrically, but simply not speak unless spoken to. No
+            suggestions. No sentence continuations. No analysis of your tone
+            sent back to a server in another country.
+          </p>
+
+          <!-- Figure with CSS placeholder -->
+          <figure>
+            <div class="article-figure__placeholder" role="img" aria-label="Manuscript fragment, ink on paper, circa 1955">
+              <span class="article-figure__label">[ MS. 014 — DRAFT IV ]</span>
+            </div>
+            <figcaption>
+              A working draft from the Folio archive, demonstrating how a measured column
+              and open leading change the quality of attention paid to each line.
+              Circa&#x202F;2026.
+            </figcaption>
+          </figure>
+
+          <p>
+            Resistance, in this sense, is not cruelty. It is the same resistance
+            a good editor provides: the one who says, "I think you know what this
+            sentence is supposed to do — find a way to make it do that." The
+            editor does not write the sentence for you. Neither should the software.
+          </p>
+
+          <!-- Ordered list with hanging index-nums -->
+          <ol class="hanging-list" aria-label="What writing software should refuse to do">
+            <li>
+              <span class="index-num">01</span>
+              <div>
+                <strong>Complete your sentences.</strong>
+                <p>The sentence not yet finished is the sentence still being
+                  thought. Completion forecloses the better version.</p>
+              </div>
+            </li>
+            <li>
+              <span class="index-num">02</span>
+              <div>
+                <strong>Assess your tone.</strong>
+                <p>Tone is a consequence of having something to say in a
+                  particular moment. It cannot be optimised from outside.</p>
+              </div>
+            </li>
+            <li>
+              <span class="index-num">03</span>
+              <div>
+                <strong>Suggest a structure.</strong>
+                <p>Structure is where argument lives. Outsourcing it
+                  outsources the thinking itself.</p>
+              </div>
+            </li>
+            <li>
+              <span class="index-num">04</span>
+              <div>
+                <strong>Produce a draft on request.</strong>
+                <p>A draft produced for you is a draft that carries
+                  the fingerprints of no one in the room.</p>
+              </div>
+            </li>
+          </ol>
+
+          <p>
+            None of this is to say that every keystroke must be agonised over.
+            Fluency is a real virtue, and some days the sentences come easily. But
+            there is a difference between fluency that is earned — built up from
+            reading, from revision, from the painful construction of earlier drafts
+            — and fluency that is rented from a system trained on the writing of
+            others. The first is the writer's. The second belongs to no one in
+            particular, which is to say it belongs to everyone, which is to say
+            it means very little.
+          </p>
+          <p>
+            The friction is the point. Not because difficulty is virtuous, but
+            because writing without friction is not writing — it is transcription
+            of a voice you have borrowed. The sentence you finish under resistance
+            is yours in a way the generated one never can be. It carries the shape
+            of your particular mind, the rhythm of your ear, the hesitation before
+            the word you chose over the three words you rejected. That hesitation
+            is the whole of it.
+          </p>
+        </div>
+
+      </div><!-- /article-layout -->
+
+      <!-- ─────────────────────────── AUTHOR BIO ─────────────────────────── -->
+      <div class="container" data-reveal>
+        <div class="author-bio">
+          <div class="author-bio__avatar" aria-hidden="true">
+            <span class="author-bio__avatar-glyph">M</span>
+          </div>
+          <div>
+            <p class="author-bio__name">M. Calloway</p>
+            <p class="author-bio__line">
+              Writes on tools, attention, and the mechanics of prose. Contributing editor
+              at <em>Longform Quarterly</em>. Uses a fountain pen and Folio, in that order.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─────────────────────────── RELATED ─────────────────────────── -->
+      <section class="related container" aria-labelledby="related-heading" data-reveal>
+        <div class="related__head">
+          <h2 class="related__title" id="related-heading">More from the Journal</h2>
+          <a href="#" class="link muted" style="font-size: var(--text-sm)">All issues →</a>
+        </div>
+        <ul class="related__list">
+          <li class="related__item">
+            <span class="index-num">Nº&#8202;01</span>
+            <a href="#" class="related__link link">
+              On the Rag: Why Justified Type Has No Place in a Draft
+            </a>
+            <span class="byline__detail">Apr 2026</span>
+          </li>
+          <li class="related__item">
+            <span class="index-num">Nº&#8202;02</span>
+            <a href="#" class="related__link link">
+              The Local-First Argument, Restated for 2026
+            </a>
+            <span class="byline__detail">May 2026</span>
+          </li>
+          <li class="related__item">
+            <span class="index-num">Nº&#8202;04</span>
+            <a href="#" class="related__link link">
+              Measure, Leading, and the Physiology of Reading
+            </a>
+            <span class="byline__detail">Forthcoming</span>
+          </li>
+        </ul>
+      </section>
+
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <span class="wordmark">Folio<span class="dot">.</span></span>
+        <p class="footer__tag">A writing desk, not a content machine.</p>
+      </div>
+      <nav class="footer__col" aria-label="Product">
+        <p class="footer__head">Product</p>
+        <a href="index.html#features">Features</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="dashboard.html">The desk</a>
+        <a href="#">Changelog</a>
+      </nav>
+      <nav class="footer__col" aria-label="Reading">
+        <p class="footer__head">Reading</p>
+        <a href="article.html">Journal</a>
+        <a href="index.html#craft">Manifesto</a>
+        <a href="#">Field notes</a>
+      </nav>
+      <nav class="footer__col" aria-label="Company">
+        <p class="footer__head">Studio</p>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#">Press kit</a>
+      </nav>
+    </div>
+    <div class="container footer__base">
+      <span>© <span data-year>2026</span> Folio Press. Set in Fraunces &amp; Hanken Grotesk.</span>
+      <span class="index-num">EDITORIAL TEMPLATE · 02/04</span>
+    </div>
+  </footer>
+
+  <script src="../shared/reveal.js" defer></script>
+</body>
+</html>

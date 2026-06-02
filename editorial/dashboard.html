@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Desk — Folio</title>
+  <meta name="description" content="Folio's writing desk: drafts, streaks, and the words you put down this week." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..560&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="styles/tokens.css" />
+  <link rel="stylesheet" href="styles/dashboard.css" />
+</head>
+<body class="app">
+  <a class="skip-link" href="#desk">Skip to content</a>
+  <div class="grain" aria-hidden="true"></div>
+
+  <div class="shell">
+    <!-- ───────────── Sidebar ───────────── -->
+    <aside class="side" aria-label="Workspace">
+      <a class="wordmark side__brand" href="index.html">Folio<span class="dot">.</span></a>
+
+      <a href="#" class="btn btn--accent side__new">New draft <span class="btn__arrow" aria-hidden="true">＋</span></a>
+
+      <nav class="side__nav" aria-label="Primary">
+        <a href="#desk" class="side__link is-active" aria-current="page"><span>The Desk</span></a>
+        <a href="#"><span>Drafts</span><span class="side__count">7</span></a>
+        <a href="#"><span>Library</span><span class="side__count">128</span></a>
+        <a href="#"><span>Archive</span></a>
+        <a href="#"><span>Trash</span></a>
+      </nav>
+
+      <div class="side__group">
+        <p class="side__head">Pinned</p>
+        <ul class="side__pins">
+          <li><a href="#"><span class="dot-mark" aria-hidden="true"></span><span class="side__pin-title">The Friction Is the Point</span><span class="side__pin-meta mono">4,210</span></a></li>
+          <li><a href="#"><span class="dot-mark dot-mark--draft" aria-hidden="true"></span><span class="side__pin-title">Notes on a quiet interface</span><span class="side__pin-meta mono">880</span></a></li>
+          <li><a href="#"><span class="dot-mark dot-mark--draft" aria-hidden="true"></span><span class="side__pin-title">Letter to a young editor</span><span class="side__pin-meta mono">2,015</span></a></li>
+        </ul>
+      </div>
+
+      <div class="side__user">
+        <span class="avatar" aria-hidden="true">JS</span>
+        <span class="side__user-name">Johnny Suede<small>Studio plan</small></span>
+        <a href="#" class="side__cog" aria-label="Settings">⚙</a>
+      </div>
+    </aside>
+
+    <!-- ───────────── Main ───────────── -->
+    <main class="main" id="desk">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow eyebrow--bare">The Desk</p>
+          <h1 class="topbar__title">Good evening, Johnny.</h1>
+        </div>
+        <div class="topbar__tools">
+          <label class="search">
+            <span class="search__icon" aria-hidden="true">⌕</span>
+            <input type="search" placeholder="Search manuscripts…" aria-label="Search manuscripts" />
+            <kbd class="search__kbd">⌘K</kbd>
+          </label>
+          <a href="#" class="btn btn--ghost">Focus mode</a>
+        </div>
+      </header>
+
+      <!-- Stat band (hairline-separated, not boxed cards) -->
+      <section class="statband" aria-label="This week at a glance">
+        <div class="metric" data-reveal>
+          <p class="metric__label">Current streak</p>
+          <p class="metric__value">12 <span class="metric__unit">days</span></p>
+          <p class="metric__trend up">▲ longest this year</p>
+        </div>
+        <div class="metric" data-reveal data-reveal-delay="1">
+          <p class="metric__label">Words this week</p>
+          <p class="metric__value tnum"><span data-countup="8420">0</span></p>
+          <p class="metric__trend up">▲ 18% vs last week</p>
+        </div>
+        <div class="metric" data-reveal data-reveal-delay="2">
+          <p class="metric__label">Hours at the desk</p>
+          <p class="metric__value tnum">9.5<span class="metric__unit">h</span></p>
+          <p class="metric__trend">— steady</p>
+        </div>
+        <div class="metric" data-reveal data-reveal-delay="3">
+          <p class="metric__label">Shipped this month</p>
+          <p class="metric__value tnum">3</p>
+          <p class="metric__trend up">▲ 1 in review</p>
+        </div>
+      </section>
+
+      <div class="grid">
+        <!-- Left column -->
+        <div class="grid__main">
+          <!-- Bar chart: words per day -->
+          <section class="card panel-pad chartcard" data-reveal>
+            <header class="card-head">
+              <div>
+                <p class="eyebrow">Output</p>
+                <h2 class="card-title">Words this week</h2>
+              </div>
+              <p class="card-aside mono">goal · 1,000/day</p>
+            </header>
+            <div class="chart" role="img" aria-label="Words written each day this week: Monday 620, Tuesday 1140, Wednesday 980, Thursday 1460, Friday 1240, Saturday 1820, Sunday 1160. Daily goal 1000.">
+              <div class="chart__grid" aria-hidden="true">
+                <span></span><span></span><span></span><span></span>
+                <span class="chart__goal"><i>goal</i></span>
+              </div>
+              <ol class="chart__bars">
+                <li><span class="bar" style="--v:34%"><b class="bar__val">620</b></span><span class="bar__day">Mon</span></li>
+                <li><span class="bar" style="--v:63%"><b class="bar__val">1,140</b></span><span class="bar__day">Tue</span></li>
+                <li><span class="bar" style="--v:54%"><b class="bar__val">980</b></span><span class="bar__day">Wed</span></li>
+                <li><span class="bar" style="--v:80%"><b class="bar__val">1,460</b></span><span class="bar__day">Thu</span></li>
+                <li><span class="bar" style="--v:68%"><b class="bar__val">1,240</b></span><span class="bar__day">Fri</span></li>
+                <li><span class="bar bar--peak" style="--v:100%"><b class="bar__val">1,820</b></span><span class="bar__day">Sat</span></li>
+                <li><span class="bar" style="--v:64%"><b class="bar__val">1,160</b></span><span class="bar__day">Sun</span></li>
+              </ol>
+            </div>
+          </section>
+
+          <!-- Drafts table -->
+          <section class="card panel-pad" data-reveal data-reveal-delay="1">
+            <header class="card-head">
+              <div>
+                <p class="eyebrow">In flight</p>
+                <h2 class="card-title">Drafts</h2>
+              </div>
+              <a href="#" class="link">All drafts →</a>
+            </header>
+            <table class="drafts">
+              <thead>
+                <tr><th scope="col">Title</th><th scope="col">Status</th><th scope="col" class="num">Words</th><th scope="col" class="num">Edited</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row" class="drafts__title">The Friction Is the Point</th>
+                  <td><span class="tag tag--accent">Editing</span></td>
+                  <td class="num mono tnum">4,210</td>
+                  <td class="num mono">2h ago</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="drafts__title">Letter to a young editor</th>
+                  <td><span class="tag">Drafting</span></td>
+                  <td class="num mono tnum">2,015</td>
+                  <td class="num mono">Yesterday</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="drafts__title">Notes on a quiet interface</th>
+                  <td><span class="tag">Drafting</span></td>
+                  <td class="num mono tnum">880</td>
+                  <td class="num mono">2 days</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="drafts__title">On hanging punctuation</th>
+                  <td><span class="tag tag--muted">Idea</span></td>
+                  <td class="num mono tnum">140</td>
+                  <td class="num mono">5 days</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </div>
+
+        <!-- Right column -->
+        <div class="grid__rail">
+          <!-- Current manuscript focus -->
+          <section class="card panel-pad focus" data-reveal data-reveal-delay="1">
+            <p class="eyebrow">Continue</p>
+            <h2 class="focus__title serif">The Friction<br />Is the Point</h2>
+            <p class="focus__excerpt">“The cursor waits without opinion. You write the sentence, then the truer one underneath it…”</p>
+            <div class="focus__progress">
+              <div class="focus__bar" style="--p:70%"><span></span></div>
+              <p class="focus__meta mono"><span>70% to 6,000-word goal</span><span class="tnum">4,210</span></p>
+            </div>
+            <a href="#" class="btn focus__btn">Keep writing <span class="btn__arrow" aria-hidden="true">→</span></a>
+          </section>
+
+          <!-- Activity timeline -->
+          <section class="card panel-pad" data-reveal data-reveal-delay="2">
+            <p class="eyebrow">Lately</p>
+            <h2 class="card-title">Revision log</h2>
+            <ol class="timeline">
+              <li><span class="timeline__time mono">14:08</span><p>Cut the third paragraph of <a href="#" class="link">§2</a>. It was throat-clearing.</p></li>
+              <li><span class="timeline__time mono">11:52</span><p>Reworked the opening line — fourth attempt, first keeper.</p></li>
+              <li><span class="timeline__time mono">Yest.</span><p>Shipped <a href="#" class="link">“A quiet interface”</a> to the Journal.</p></li>
+              <li><span class="timeline__time mono">Mon</span><p>Started <em>Letter to a young editor</em> from a margin note.</p></li>
+            </ol>
+          </section>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="../shared/reveal.js" defer></script>
+</body>
+</html>

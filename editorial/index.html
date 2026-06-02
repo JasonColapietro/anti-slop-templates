@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Folio — editorial template set</title>
+  <meta name="description" content="The Folio editorial template set: landing, article, pricing and dashboard in one warm, print-rooted system." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..560&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="styles/tokens.css" />
+  <link rel="stylesheet" href="styles/index.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="site-header" data-header>
+    <div class="container site-header__inner">
+      <a class="wordmark" href="index.html">Folio<span class="dot">.</span></a>
+      <nav class="nav" aria-label="Primary">
+        <a href="landing.html">Landing</a>
+        <a href="article.html">Journal</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="dashboard.html">The Desk</a>
+        <span class="nav__sep" aria-hidden="true"></span>
+        <a href="../index.html" class="link">All templates</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="set-hero container">
+      <p class="eyebrow" data-reveal>Editorial system · Set 01</p>
+      <h1 class="set-hero__title" data-reveal data-reveal-delay="1">The <em>Folio</em><br />template set.</h1>
+      <p class="lede set-hero__lede" data-reveal data-reveal-delay="2">
+        Four surfaces in one committed editorial language — warm paper, Fraunces
+        display, a single persimmon accent, and an honest grid broken with intent.
+        Open any page below.
+      </p>
+      <dl class="set-spec" data-reveal data-reveal-delay="3">
+        <div><dt>Display</dt><dd class="serif">Fraunces</dd></div>
+        <div><dt>Text</dt><dd>Hanken Grotesk</dd></div>
+        <div><dt>Accent</dt><dd><span class="dot-accent" aria-hidden="true"></span>Persimmon</dd></div>
+        <div><dt>Ground</dt><dd>Warm paper</dd></div>
+      </dl>
+    </section>
+
+    <section class="section--tight container">
+      <ul class="set-tiles">
+        <li data-reveal><a class="set-tile" href="landing.html"><span class="index-num">01</span><span class="set-tile__name serif">Landing</span><span class="set-tile__desc">Asymmetric hero, layered manuscript, bento features, dark philosophy band.</span><span class="set-tile__go">Open page <span aria-hidden="true">→</span></span></a></li>
+        <li data-reveal data-reveal-delay="1"><a class="set-tile" href="article.html"><span class="index-num">02</span><span class="set-tile__name serif">Article</span><span class="set-tile__desc">Long-form reading with drop cap, marginalia and a measure-breaking pull quote.</span><span class="set-tile__go">Open page <span aria-hidden="true">→</span></span></a></li>
+        <li data-reveal data-reveal-delay="2"><a class="set-tile" href="pricing.html"><span class="index-num">03</span><span class="set-tile__name serif">Pricing</span><span class="set-tile__desc">An asymmetric plan layout and a comparison table set as real typography.</span><span class="set-tile__go">Open page <span aria-hidden="true">→</span></span></a></li>
+        <li data-reveal data-reveal-delay="3"><a class="set-tile" href="dashboard.html"><span class="index-num">04</span><span class="set-tile__name serif">Dashboard</span><span class="set-tile__desc">“The Desk” — a writer's workspace with hand-built charts and a focus card.</span><span class="set-tile__go">Open page <span aria-hidden="true">→</span></span></a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__base">
+      <span>© <span data-year>2026</span> Folio — editorial template set. Set in Fraunces &amp; Hanken Grotesk.</span>
+      <a href="../index.html" class="link">← All anti-slop templates</a>
+    </div>
+  </footer>
+
+  <script src="../shared/reveal.js" defer></script>
+</body>
+</html>

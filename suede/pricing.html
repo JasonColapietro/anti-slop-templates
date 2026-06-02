@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing — Suede IP Registry</title>
+  <meta name="description" content="Registry plans for creators. Proof-of-creation priced like a utility — free to start, $19/mo for serious output, custom for teams." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="styles/tokens.css" />
+  <link rel="stylesheet" href="styles/pricing.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="gridlines" aria-hidden="true"></div>
+  <hr class="registry-rule registry-rule--top" aria-hidden="true" />
+
+  <header class="site-header" data-header>
+    <div class="container site-header__inner">
+      <a class="wordmark" href="index.html"><span class="mark">S</span>Suede</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html#registry">Registry</a>
+        <a href="index.html#rights">Rights</a>
+        <a href="pricing.html" aria-current="page">Pricing</a>
+        <a href="article.html">Docs</a>
+        <span class="nav__sep" aria-hidden="true"></span>
+        <a href="#" class="link">Sign in</a>
+        <a href="dashboard.html" class="btn">Open the terminal <span class="btn__arrow" aria-hidden="true">→</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ─────────────── MASTHEAD ─────────────── -->
+    <section class="pricing-hero section">
+      <div class="container">
+        <p class="eyebrow" data-reveal>Plans</p>
+        <h1 class="pricing-hero__title" data-reveal data-reveal-delay="1">
+          Proof priced like a utility,<br /><em>not a tax.</em>
+        </h1>
+        <p class="lede pricing-hero__lede" data-reveal data-reveal-delay="2">
+          Every work you register is a permanent cryptographic claim. Start free,
+          scale when output demands it. No lock-in — your records live on-chain regardless.
+        </p>
+
+        <!-- ── Toggle ── -->
+        <div class="toggle-wrap" data-reveal data-reveal-delay="3">
+          <fieldset class="billing-toggle" id="billing-toggle">
+            <legend class="visually-hidden">Billing period</legend>
+            <label class="billing-toggle__opt">
+              <input type="radio" name="billing" value="monthly" checked />
+              <span>Monthly</span>
+            </label>
+            <label class="billing-toggle__opt">
+              <input type="radio" name="billing" value="annual" />
+              <span>Annual <span class="billing-toggle__save">save 2 months</span></span>
+            </label>
+          </fieldset>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────── PLANS (differential weight) ─────────────── -->
+    <section class="plans-section" aria-label="Registry plans">
+      <div class="container plans-grid">
+
+        <!-- CREATOR (free) — lighter weight -->
+        <article class="panel plan plan--creator" data-reveal>
+          <header class="plan__head">
+            <span class="index-num">01 / FREE</span>
+            <h2 class="plan__name">Creator</h2>
+            <div class="plan__price">
+              <span class="plan__amount mono tnum" data-monthly="$0" data-annual="$0">$0</span>
+              <span class="plan__cadence muted">/month</span>
+            </div>
+            <p class="plan__tag">For building the habit. Register your first works and understand the system.</p>
+          </header>
+          <hr class="rule" />
+          <dl class="plan__limits">
+            <div>
+              <dt>Registrations</dt>
+              <dd class="mono cyan">5 / month</dd>
+            </div>
+            <div>
+              <dt>Chains</dt>
+              <dd class="mono">Base only</dd>
+            </div>
+            <div>
+              <dt>License types</dt>
+              <dd class="mono">CC presets</dd>
+            </div>
+            <div>
+              <dt>API access</dt>
+              <dd class="mono muted">—</dd>
+            </div>
+            <div>
+              <dt>Team seats</dt>
+              <dd class="mono muted">1 (solo)</dd>
+            </div>
+          </dl>
+          <footer class="plan__foot">
+            <a href="dashboard.html" class="btn btn--ghost">Start for free <span class="btn__arrow" aria-hidden="true">→</span></a>
+            <p class="plan__fine muted">No card required</p>
+          </footer>
+        </article>
+
+        <!-- STUDIO (recommended) — dominant weight -->
+        <article class="panel plan plan--studio" data-reveal data-reveal-delay="1" aria-label="Recommended plan">
+          <div class="plan__glow" aria-hidden="true"></div>
+          <header class="plan__head">
+            <div class="plan__badges">
+              <span class="index-num">02 / STUDIO</span>
+              <span class="badge badge--registry"><span class="badge__dot"></span>Recommended</span>
+            </div>
+            <h2 class="plan__name plan__name--studio">Studio</h2>
+            <div class="plan__price">
+              <span class="plan__amount mono tnum" data-monthly="$19" data-annual="$158">$19</span>
+              <span class="plan__cadence dim">/month</span>
+            </div>
+            <p class="plan__annual-note mono muted" data-show-annual>$158 billed annually · ~$13.17/mo</p>
+            <p class="plan__tag">For working creators. Unlimited proof, all chains, machine-readable licensing.</p>
+          </header>
+          <hr class="rule rule--strong" />
+          <dl class="plan__limits plan__limits--studio">
+            <div>
+              <dt>Registrations</dt>
+              <dd class="mono cyan">Unlimited</dd>
+            </div>
+            <div>
+              <dt>Chains</dt>
+              <dd class="mono cyan">Base · Mainnet · Solana</dd>
+            </div>
+            <div>
+              <dt>License types</dt>
+              <dd class="mono cyan">CC + custom terms</dd>
+            </div>
+            <div>
+              <dt>API access</dt>
+              <dd class="mono green">Included</dd>
+            </div>
+            <div>
+              <dt>Team seats</dt>
+              <dd class="mono">1 (solo)</dd>
+            </div>
+          </dl>
+          <footer class="plan__foot">
+            <a href="dashboard.html" class="btn btn--lg">Get Studio <span class="btn__arrow" aria-hidden="true">→</span></a>
+            <p class="plan__fine dim">14-day free trial · cancel anytime</p>
+          </footer>
+        </article>
+
+        <!-- LABEL (custom) — lighter weight, distinct signal -->
+        <article class="panel plan plan--label" data-reveal data-reveal-delay="2">
+          <header class="plan__head">
+            <span class="index-num">03 / ENTERPRISE</span>
+            <h2 class="plan__name">Label</h2>
+            <div class="plan__price">
+              <span class="plan__amount plan__amount--custom mono">Custom</span>
+            </div>
+            <p class="plan__tag">For teams, publishers, and labels registering catalog at volume.</p>
+          </header>
+          <hr class="rule" />
+          <dl class="plan__limits">
+            <div>
+              <dt>Registrations</dt>
+              <dd class="mono brass">Unlimited + bulk</dd>
+            </div>
+            <div>
+              <dt>Chains</dt>
+              <dd class="mono brass">All + private</dd>
+            </div>
+            <div>
+              <dt>License types</dt>
+              <dd class="mono brass">Fully custom</dd>
+            </div>
+            <div>
+              <dt>API access</dt>
+              <dd class="mono green">Priority indexing</dd>
+            </div>
+            <div>
+              <dt>Team seats</dt>
+              <dd class="mono brass">Unlimited</dd>
+            </div>
+          </dl>
+          <footer class="plan__foot">
+            <a href="mailto:hello@suedeai.ai" class="btn btn--ghost">Talk to the team <span class="btn__arrow" aria-hidden="true">→</span></a>
+            <p class="plan__fine muted">SLA + dedicated support</p>
+          </footer>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ─────────────── METERED READOUT ─────────────── -->
+    <section class="metered section--tight" aria-labelledby="metered-head">
+      <div class="container">
+        <p class="eyebrow" data-reveal>Metered usage</p>
+        <h2 class="visually-hidden" id="metered-head">Metered registration pricing</h2>
+        <div class="metered__terminal" data-reveal data-reveal-delay="1" role="region" aria-label="Metered usage terminal">
+          <div class="metered__bar">
+            <span class="mono muted metered__prompt">&gt; registry.metered</span>
+            <span class="badge badge--live badge--registry"><span class="badge__dot"></span>Live rates</span>
+          </div>
+          <div class="metered__rows">
+            <div class="metered__row">
+              <span class="mono muted metered__key">on_chain_registration</span>
+              <span class="mono cyan metered__val">$0.50 / record</span>
+              <span class="mono muted metered__note">beyond plan limit</span>
+            </div>
+            <div class="metered__row">
+              <span class="mono muted metered__key">api_calls</span>
+              <span class="mono cyan metered__val">$0.002 / req</span>
+              <span class="mono muted metered__note">after 10k included</span>
+            </div>
+            <div class="metered__row">
+              <span class="mono muted metered__key">bulk_import</span>
+              <span class="mono cyan metered__val">$0.20 / record</span>
+              <span class="mono muted metered__note">Label plan only</span>
+            </div>
+            <div class="metered__row">
+              <span class="mono muted metered__key">license_generation</span>
+              <span class="mono green metered__val">$0.00</span>
+              <span class="mono muted metered__note">always free</span>
+            </div>
+          </div>
+          <div class="metered__foot">
+            <span class="mono muted metered__prompt">&gt; _</span>
+            <span class="mono muted" style="font-size:var(--text-xs)">Metered charges billed monthly · capped at $200/mo on Creator</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────── COMPARISON MATRIX ─────────────── -->
+    <section class="matrix-section section--tight" aria-labelledby="matrix-head">
+      <div class="container">
+        <p class="eyebrow" data-reveal>Full comparison</p>
+        <h2 class="matrix__title" id="matrix-head" data-reveal data-reveal-delay="1">Every line, side by side.</h2>
+        <div class="matrix-scroll" data-reveal data-reveal-delay="2">
+          <table class="matrix" aria-label="Plan comparison matrix">
+            <thead>
+              <tr>
+                <th scope="col" class="matrix__feature-col">Feature</th>
+                <th scope="col" class="matrix__plan-col">Creator</th>
+                <th scope="col" class="matrix__plan-col matrix__plan-col--studio">Studio <span class="badge badge--registry"><span class="badge__dot"></span>Recommended</span></th>
+                <th scope="col" class="matrix__plan-col">Label</th>
+              </tr>
+              <tr class="matrix__price-row">
+                <td></td>
+                <td class="mono tnum">Free</td>
+                <td class="mono tnum matrix__plan-col--studio"><span data-monthly="$19/mo" data-annual="$13.17/mo">$19/mo</span></td>
+                <td class="mono tnum muted">Custom</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="matrix__group-row"><td colspan="4" class="matrix__group">Registry</td></tr>
+              <tr><td>Registrations / month</td><td class="mono">5</td><td class="mono matrix__plan-col--studio cyan">Unlimited</td><td class="mono brass">Unlimited + bulk</td></tr>
+              <tr><td>SHA-256 fingerprinting</td><td class="matrix__check green">✓</td><td class="matrix__check green matrix__plan-col--studio">✓</td><td class="matrix__check green">✓</td></tr>
+              <tr><td>Timestamp &amp; block proof</td><td class="matrix__check green">✓</td><td class="matrix__check green matrix__plan-col--studio">✓</td><td class="matrix__check green">✓</td></tr>
+              <tr><td>Immutable record URL</td><td class="matrix__check green">✓</td><td class="matrix__check green matrix__plan-col--studio">✓</td><td class="matrix__check green">✓</td></tr>
+              <tr><td>Overage registrations</td><td class="mono muted">$0.50/record</td><td class="mono matrix__plan-col--studio muted">$0.50/record</td><td class="mono brass">Volume pricing</td></tr>
+
+              <tr class="matrix__group-row"><td colspan="4" class="matrix__group">Rights &amp; licensing</td></tr>
+              <tr><td>Creative Commons presets</td><td class="matrix__check green">✓</td><td class="matrix__check green matrix__plan-col--studio">✓</td><td class="matrix__check green">✓</td></tr>
+              <tr><td>Custom license terms</td><td class="mono muted">—</td><td class="matrix__check green matrix__plan-col--studio">✓</td><td class="matrix__check green">✓</td></tr>
+              <tr><td>Agent-readable rights (ERC-8004)</td><td class="mono muted">—</td><td class="matrix__check green matrix__plan-col--studio">✓</td><td class="matrix__check green">✓</td></tr>
+              <tr><td>Licensing revenue routing</td><td class="mono muted">—</td><td class="matrix__check green matrix__plan-col--studio">✓</td><td class="matrix__check green">✓</td></tr>
+
+              <tr class="matrix__group-row"><td colspan="4" class="matrix__group">Chains &amp; identity</td></tr>
+              <tr><td>Base</td><td class="matrix__check green">✓</td><td class="matrix__check green matrix__plan-col--studio">✓</td><td class="matrix__check green">✓</td></tr>
+              <tr><td>Ethereum Mainnet</td><td class="mono muted">—</td><td class="matrix__check green matrix__plan-col--studio">✓</td><td class="matrix__check green">✓</td></tr>
+              <tr><td>Solana</td><td class="mono muted">—</td><td class="matrix__check green matrix__plan-col--studio">✓</td><td class="matrix__check green">✓</td></tr>
+              <tr><td>Private / custom chain</td><td class="mono muted">—</td><td class="mono muted matrix__plan-col--studio">—</td><td class="matrix__check green">✓</td></tr>
+              <tr><td>ERC-8004 author identity</td><td class="mono">Base only</td><td class="mono cyan matrix__plan-col--studio">All chains</td><td class="mono brass">All + reputation</td></tr>
+              <tr><td>API access (read + write)</td><td class="mono muted">—</td><td class="matrix__check green matrix__plan-col--studio">✓</td><td class="matrix__check green">✓ Priority</td></tr>
+
+              <tr class="matrix__group-row"><td colspan="4" class="matrix__group">Support</td></tr>
+              <tr><td>Docs &amp; community</td><td class="matrix__check green">✓</td><td class="matrix__check green matrix__plan-col--studio">✓</td><td class="matrix__check green">✓</td></tr>
+              <tr><td>Email support</td><td class="mono muted">—</td><td class="matrix__check green matrix__plan-col--studio">✓</td><td class="matrix__check green">✓</td></tr>
+              <tr><td>SLA &amp; dedicated channel</td><td class="mono muted">—</td><td class="mono muted matrix__plan-col--studio">—</td><td class="matrix__check green">✓</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────── FAQ ─────────────── -->
+    <section class="faq section--tight" aria-labelledby="faq-head">
+      <div class="container faq__inner">
+        <div class="faq__lead" data-reveal>
+          <p class="eyebrow">Common questions</p>
+          <h2 id="faq-head">Things people<br />actually ask.</h2>
+        </div>
+        <dl class="faq__list">
+          <div class="faq__item" data-reveal>
+            <dt>What exactly gets registered on-chain?</dt>
+            <dd>A SHA-256 hash of your file, your author identity, a timestamp, and your chosen license terms. Suede never stores the raw file — only the cryptographic fingerprint that proves it existed, authored by you, at that moment.</dd>
+          </div>
+          <div class="faq__item" data-reveal>
+            <dt>Do my records disappear if I cancel?</dt>
+            <dd>No. On-chain records are permanent. Cancelling Studio drops new work to Creator limits; everything already registered stays on the registry forever.</dd>
+          </div>
+          <div class="faq__item" data-reveal>
+            <dt>What counts as a "registration"?</dt>
+            <dd>Each unique file hash submitted to the registry. Re-registering the same file (e.g., to update license terms) uses another slot but creates a versioned link to the original.</dd>
+          </div>
+          <div class="faq__item" data-reveal>
+            <dt>How does annual billing work?</dt>
+            <dd>Annual Studio is billed as $158 — 10 months at the monthly rate, two months free. Switch periods from your account settings at any renewal date.</dd>
+          </div>
+          <div class="faq__item" data-reveal>
+            <dt>What are "agent-readable rights"?</dt>
+            <dd>When an AI agent or licensing platform queries your work, it reads your ERC-8004 record directly — no middleman. Studio and Label plans expose this interface so deals close while you're focused on making things.</dd>
+          </div>
+          <div class="faq__item" data-reveal>
+            <dt>Can I get a custom contract for my label?</dt>
+            <dd>Yes — that's the Label plan. Email <a class="link" href="mailto:hello@suedeai.ai">hello@suedeai.ai</a> and we'll tailor a deal to your catalog size, chain preferences, and finance requirements.</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ─────────────── CTA BAND ─────────────── -->
+    <section class="cta">
+      <div class="container cta__inner" data-reveal>
+        <div>
+          <p class="eyebrow">Start the record</p>
+          <h2 class="cta__title">Make it provably yours.</h2>
+        </div>
+        <div class="cta__actions">
+          <a href="dashboard.html" class="btn btn--lg">Register your first work <span class="btn__arrow" aria-hidden="true">→</span></a>
+          <p class="cta__fine">Free for your first 5 registrations. No card required.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <hr class="registry-rule" aria-hidden="true" />
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <span class="wordmark"><span class="mark">S</span>Suede</span>
+        <p class="footer__tag">Proof of creation for the work you make.</p>
+        <div class="footer__badges">
+          <span class="badge badge--verified"><span class="badge__dot"></span>Audited</span>
+          <span class="badge badge--registry"><span class="badge__dot"></span>Open standard</span>
+        </div>
+      </div>
+      <nav class="footer__col" aria-label="Product">
+        <p class="footer__head">Registry</p>
+        <a href="index.html#registry">How it works</a>
+        <a href="dashboard.html">The terminal</a>
+        <a href="pricing.html" aria-current="page">Pricing</a>
+        <a href="#">Explorer</a>
+      </nav>
+      <nav class="footer__col" aria-label="Developers">
+        <p class="footer__head">Developers</p>
+        <a href="article.html">Docs</a>
+        <a href="#">ERC-8004</a>
+        <a href="#">API</a>
+      </nav>
+      <nav class="footer__col" aria-label="Company">
+        <p class="footer__head">Company</p>
+        <a href="#">About</a>
+        <a href="#">Manifesto</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
+    <div class="container footer__base">
+      <span>© <span data-year>2026</span> Suede Labs. Set in Instrument Serif &amp; Manrope.</span>
+      <span class="index-num">SUEDE TEMPLATE · 03/04</span>
+    </div>
+  </footer>
+
+  <script src="../shared/reveal.js" defer></script>
+  <script>
+    /* Billing toggle */
+    !function(){var t=document.getElementById('billing-toggle');if(!t)return;
+    document.querySelectorAll('[data-show-annual]').forEach(function(e){e.hidden=true;});
+    t.addEventListener('change',function(e){var a=e.target.value==='annual';
+      document.querySelectorAll('[data-monthly]').forEach(function(el){el.textContent=a?el.dataset.annual:el.dataset.monthly;});
+      document.querySelectorAll('[data-show-annual]').forEach(function(el){el.hidden=!a;});
+    });}();
+    /* Sticky header */
+    !function(){var h=document.querySelector('[data-header]');if(!h)return;
+    var s=document.createElement('div');document.body.prepend(s);
+    new IntersectionObserver(function(e){h.classList.toggle('is-scrolled',!e[0].isIntersecting);},{rootMargin:'-1px 0px 0px 0px'}).observe(s);}();
+    /* Footer year */
+    var y=document.querySelector('[data-year]');if(y)y.textContent=new Date().getFullYear();
+  </script>
+</body>
+</html>

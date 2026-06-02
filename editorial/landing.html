@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Folio — a writing desk for people who take prose seriously</title>
+  <meta name="description" content="Folio is local-first writing software with no AI autocomplete, real typography, and a focus on the sentence." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..560&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="styles/tokens.css" />
+  <link rel="stylesheet" href="styles/landing.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="site-header" data-header>
+    <div class="container site-header__inner">
+      <a class="wordmark" href="index.html">Folio<span class="dot">.</span></a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#craft">Craft</a>
+        <a href="#features">Features</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="article.html">Journal</a>
+        <span class="nav__sep" aria-hidden="true"></span>
+        <a href="#" class="link">Sign in</a>
+        <a href="#" class="btn">Start writing <span class="btn__arrow" aria-hidden="true">→</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ─────────────────────────── HERO ─────────────────────────── -->
+    <section class="hero section">
+      <div class="container hero__grid">
+        <div class="hero__lead">
+          <p class="eyebrow" data-reveal>Independent writing software · est. <span data-year>2026</span></p>
+          <h1 class="hero__title" data-reveal data-reveal-delay="1">
+            A writing desk for<br />people who take<br /><em>prose</em> seriously.
+          </h1>
+          <p class="lede hero__lede" data-reveal data-reveal-delay="2">
+            No autocomplete finishing your thoughts. No engagement metrics. Just
+            real typography, a local-first archive, and the quiet a sentence needs
+            to be made well.
+          </p>
+          <div class="hero__actions" data-reveal data-reveal-delay="3">
+            <a href="#" class="btn btn--lg">Start writing <span class="btn__arrow" aria-hidden="true">→</span></a>
+            <a href="#craft" class="btn btn--ghost btn--lg">Read the manifesto</a>
+          </div>
+          <ul class="hero__meta" data-reveal data-reveal-delay="4">
+            <li>Local-first</li>
+            <li>Plain&nbsp;text, forever</li>
+            <li>No&nbsp;AI&nbsp;autocomplete</li>
+          </ul>
+        </div>
+
+        <!-- A composed "manuscript" — layered, rotated, built in markup -->
+        <div class="hero__art" data-reveal data-reveal-delay="2" aria-hidden="true">
+          <figure class="manuscript">
+            <header class="manuscript__head">
+              <span class="index-num">MS. 014</span>
+              <span class="index-num">FOLIO / DRAFT</span>
+            </header>
+            <p class="manuscript__body">
+              <span class="dropcap">T</span>here is a particular silence to a blank
+              page that no blinking suggestion can keep. The cursor waits without
+              opinion. You write the sentence, then the truer one underneath it—
+            </p>
+            <blockquote class="manuscript__quote">
+              “Write to discover what you think, not to confirm it.”
+            </blockquote>
+            <p class="manuscript__body manuscript__body--dim">
+              and the paragraph holds its shape because the measure was set with
+              care, the leading chosen, the rag left ragged on purpose.
+            </p>
+            <aside class="manuscript__margin">marginalia · §3</aside>
+          </figure>
+          <div class="manuscript manuscript--behind"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────── MARQUEE / PROOF ─────────────────────────── -->
+    <section class="proof">
+      <div class="container proof__row">
+        <p class="proof__label">Read &amp; written at</p>
+        <ul class="proof__logos">
+          <li>The Paris Desk</li>
+          <li>Caldera Press</li>
+          <li>Longform Quarterly</li>
+          <li>Marginal Notes</li>
+          <li>Ink &amp; Argument</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────── FEATURES (bento, asymmetric) ─────────────────────────── -->
+    <section class="section features" id="features">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">What's on the desk</p>
+          <h2 class="section-head__title">Tools that defer to the writing,<br />not the other way around.</h2>
+        </div>
+
+        <div class="bento">
+          <article class="card bento__feature" data-reveal>
+            <span class="index-num">01</span>
+            <h3>The typographic editor</h3>
+            <p>Optical sizing, real small caps, hung punctuation and a measure you
+              set yourself. The draft already reads like the printed page—because
+              it is set like one.</p>
+            <div class="bento__feature-art" aria-hidden="true">
+              <span class="set-aa">Aa</span>
+              <span class="set-row">Fraunces · opsz 9→144</span>
+            </div>
+          </article>
+
+          <article class="card bento__cell" data-reveal data-reveal-delay="1">
+            <span class="index-num">02</span>
+            <h3>Local-first archive</h3>
+            <p>Every draft is a plain text file on your disk. Sync if you like,
+              leave if you like. Nothing is hostage to a server.</p>
+          </article>
+
+          <article class="card bento__cell" data-reveal data-reveal-delay="2">
+            <span class="index-num">03</span>
+            <h3>Revision as a record</h3>
+            <p>Track the sentence that changed, not a diff of noise. See the draft
+              the way an editor would.</p>
+          </article>
+
+          <article class="card bento__wide" data-reveal>
+            <div>
+              <span class="index-num">04</span>
+              <h3>Focus that means it</h3>
+              <p>No counters, no streaks, no nudges. The chrome recedes until the
+                page is the only lit thing in the room.</p>
+            </div>
+            <p class="bento__wide-quote serif">“The fewer the affordances, the<br />louder the prose.”</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────── SPREAD / PHILOSOPHY (dark band) ─────────────────────────── -->
+    <section class="spread" id="craft">
+      <div class="container spread__grid">
+        <p class="eyebrow eyebrow--accent" data-reveal>The manifesto, abridged</p>
+        <blockquote class="spread__quote" data-reveal data-reveal-delay="1">
+          We built Folio because writing software started
+          <em>writing for you</em>. We think that's exactly backwards. The work
+          is the thinking. The friction is the point.
+        </blockquote>
+        <div class="spread__byline" data-reveal data-reveal-delay="2">
+          <span class="index-num">— THE FOLIO DESK</span>
+          <a href="article.html" class="link link--accent">Read in full →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────── CRAFT LIST (rhythm via hairlines) ─────────────────────────── -->
+    <section class="section section--tight craftlist">
+      <div class="container">
+        <div class="craftlist__grid">
+          <div class="craftlist__intro" data-reveal>
+            <p class="eyebrow">Particulars</p>
+            <h2>Details you'd<br />only notice<br />if they were<br /><em>wrong</em>.</h2>
+          </div>
+          <ol class="craftlist__items">
+            <li data-reveal><span class="index-num">i</span><div><h4>Hanging punctuation</h4><p>Quotes and bullets sit in the margin so the text edge stays true.</p></div></li>
+            <li data-reveal data-reveal-delay="1"><span class="index-num">ii</span><div><h4>Old-style figures in prose</h4><p>Numbers that sit on the baseline like letters, lining figures kept for tables.</p></div></li>
+            <li data-reveal data-reveal-delay="2"><span class="index-num">iii</span><div><h4>A real measure</h4><p>66 characters by default, because that's where the eye stops working to read.</p></div></li>
+            <li data-reveal data-reveal-delay="3"><span class="index-num">iv</span><div><h4>Widow &amp; orphan control</h4><p>No lone word stranded at the top of a column. Ever.</p></div></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────── CTA ─────────────────────────── -->
+    <section class="cta">
+      <div class="container cta__inner" data-reveal>
+        <h2 class="cta__title">Put something true<br />on the page today.</h2>
+        <div class="cta__actions">
+          <a href="#" class="btn btn--accent btn--lg">Start writing — free for 30 days <span class="btn__arrow" aria-hidden="true">→</span></a>
+          <p class="cta__fine">No card. Exports to plain text whenever you leave.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <span class="wordmark">Folio<span class="dot">.</span></span>
+        <p class="footer__tag">A writing desk, not a content machine.</p>
+      </div>
+      <nav class="footer__col" aria-label="Product">
+        <p class="footer__head">Product</p>
+        <a href="#features">Features</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="dashboard.html">The desk</a>
+        <a href="#">Changelog</a>
+      </nav>
+      <nav class="footer__col" aria-label="Reading">
+        <p class="footer__head">Reading</p>
+        <a href="article.html">Journal</a>
+        <a href="#craft">Manifesto</a>
+        <a href="#">Field notes</a>
+      </nav>
+      <nav class="footer__col" aria-label="Company">
+        <p class="footer__head">Studio</p>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#">Press kit</a>
+      </nav>
+    </div>
+    <div class="container footer__base">
+      <span>© <span data-year>2026</span> Folio Press. Set in Fraunces &amp; Hanken Grotesk.</span>
+      <span class="index-num">EDITORIAL TEMPLATE · 01/04</span>
+    </div>
+  </footer>
+
+  <script src="../shared/reveal.js" defer></script>
+</body>
+</html>
