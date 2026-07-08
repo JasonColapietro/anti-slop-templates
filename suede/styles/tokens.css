@@ -181,6 +181,7 @@ small { font-size: var(--text-sm); }
   border-radius: 2px;
 }
 .registry-rule--thin { height: 2px; }
+.registry-rule--top { border-radius: 0; }
 
 /* ============================================================================
    Eyebrow — mono, uppercase, terminal voice
@@ -373,6 +374,26 @@ small { font-size: var(--text-sm); }
 }
 .site-footer a { color: var(--text-muted); transition: color var(--dur-fast) var(--ease); }
 .site-footer a:hover { color: var(--cyan); }
+.site-footer .registry-rule { border-radius: 0; }
+.footer__grid {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: var(--space-lg);
+  padding-block: var(--space-xl) var(--space-lg);
+}
+.footer__brand .wordmark { font-size: 1.6rem; }
+.footer__tag { margin-top: var(--space-sm); color: var(--text-muted); max-width: 26ch; }
+.footer__badges { display: flex; gap: 0.5rem; margin-top: var(--space-md); flex-wrap: wrap; }
+.footer__head {
+  font-family: var(--font-mono); font-size: var(--text-xs);
+  text-transform: uppercase; letter-spacing: 0.14em;
+  color: var(--text-muted); margin-bottom: var(--space-sm);
+}
+.footer__col { display: flex; flex-direction: column; gap: 0.6rem; }
+.footer__base {
+  display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+  padding-top: var(--space-md); border-top: 1px solid var(--hairline);
+  font-size: var(--text-sm); color: var(--text-muted);
+}
 
 /* ============================================================================
    Terminal grid texture (very subtle), reveal, utilities
