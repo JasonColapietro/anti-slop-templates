@@ -321,6 +321,34 @@ small { font-size: var(--text-sm); }
 }
 .site-footer a { color: var(--ground-muted); transition: color var(--dur-fast) var(--ease); }
 .site-footer a:hover { color: var(--ground-text); }
+.footer__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: var(--space-lg);
+  padding-bottom: var(--space-xl);
+}
+.footer__brand .wordmark { color: var(--ground-text); font-size: 1.6rem; }
+.footer__tag { margin-top: var(--space-sm); color: var(--ground-muted); max-width: 26ch; }
+.footer__head {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ground-muted);
+  margin-bottom: var(--space-sm);
+}
+.footer__col { display: flex; flex-direction: column; gap: 0.6rem; }
+.footer__base {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--ground-2);
+  font-size: var(--text-sm);
+  color: var(--ground-muted);
+}
+.footer__base .index-num { color: var(--ground-muted); }
 
 /* ============================================================================
    Texture — a faint paper grain warms everything; off for reduced data prefs
