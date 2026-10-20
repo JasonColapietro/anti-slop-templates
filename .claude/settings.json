@@ -9,5 +9,10 @@
   },
   "enabledPlugins": {
     "suede-skills@suede": true
+  },
+  "attribution": {
+    "commit": "",
+    "pr": "",
+    "sessionUrl": false
   }
 }
