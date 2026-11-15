@@ -1,0 +1,36 @@
+/* "Built by Suede AI" credit block — sits inside .site-footer on the dark ground.
+   Uses editorial tokens only; load after editorial/styles/tokens.css. */
+.built-by { padding-bottom: var(--space-lg); }
+.built-by__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: var(--space-lg);
+  padding-bottom: var(--space-lg);
+}
+.built-by__title {
+  font-size: var(--text-lg);
+  line-height: 1.1;
+  color: var(--ground-text);
+  max-width: 20ch;
+}
+.built-by__text {
+  margin-top: var(--space-sm);
+  max-width: 48ch;
+  font-size: var(--text-sm);
+  color: var(--ground-muted);
+}
+.site-footer .built-by__text a {
+  color: var(--ground-text);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 0.2em;
+}
+.built-by .footer__col a { font-size: var(--text-sm); }
+
+@media (max-width: 820px) {
+  .built-by__grid { grid-template-columns: 1fr 1fr; }
+  .built-by__intro { grid-column: 1 / -1; }
+}
+@media (max-width: 480px) {
+  .built-by__grid { grid-template-columns: 1fr; }
+}

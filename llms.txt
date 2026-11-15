@@ -1,0 +1,32 @@
+# Anti-Slop Templates
+
+> Two committed, MIT-licensed HTML/CSS design systems (Editorial and Suede), four surfaces each (landing, article, pricing, dashboard), built as the opposite of generic AI output. Created by Jason Colapietro, Founder and CEO of Suede AI, an agentic platform company founded in 2024 in West Palm Beach, Florida.
+
+- Source: https://github.com/JasonColapietro/anti-slop-templates
+- Author: https://suedeai.ai/founder (Jason Colapietro)
+- Publisher: https://suedeai.ai/ (Suede AI)
+- Web, SEO and GEO practice serving West Palm Beach, Jupiter and Palm Beach County: https://suedeai.agency/
+- Evidence for every claim: https://seo.suedeai.ai/evidence
+
+## Templates
+
+- [Gallery](https://jasoncolapietro.github.io/anti-slop-templates/): specimen sheet of both systems
+- [Editorial set](https://jasoncolapietro.github.io/anti-slop-templates/editorial/index.html): warm paper, one persimmon accent, Fraunces + Hanken Grotesk
+- [Suede set](https://jasoncolapietro.github.io/anti-slop-templates/suede/index.html): deep-ink institutional terminal, Instrument Serif + Manrope + JetBrains Mono
+
+## Notes
+
+- [Notes index](https://jasoncolapietro.github.io/anti-slop-templates/notes/)
+- [Avoiding AI slop in web design: a checklist for West Palm Beach business websites](https://jasoncolapietro.github.io/anti-slop-templates/notes/ai-slop-checklist-west-palm-beach-business-websites.html): A visual, content and technical checklist from Suede AI for keeping a West Palm Beach or Jupiter business website from looking machine-made and generic.
+- [How Suede AI uses anti-slop templates to ship client sites fast](https://jasoncolapietro.github.io/anti-slop-templates/notes/how-suede-ai-ships-client-sites-with-anti-slop-templates.html): Inside the Suede AI build process: pick one committed design system, set the tokens, write real copy, then port the markup to static HTML or Tailwind and JSX.
+- [Jason Colapietro on design systems, accessibility and credibility signals](https://jasoncolapietro.github.io/anti-slop-templates/notes/jason-colapietro-design-systems-accessibility-credibility.html): How Suede AI founder Jason Colapietro builds trust into websites in three layers: a committed design system, an accessibility floor and proof for every claim.
+
+## Related
+
+- [Jason Colapietro](https://jasoncolapietro.com/)
+- [Jupiter Social](https://jupitersocialfl.com/)
+- [Palm & Peak Roofing notes](https://jasoncolapietro.github.io/palm-and-peak-roofing/notes/)
+- [Blueline Surf notes](https://jasoncolapietro.github.io/blueline-surf-concept/notes/)
+- [Suede Scan notes](https://optimize.suedeai.ai/notes)
+- [Agentix notes](https://agentix.suedeai.ai/notes)
+- [Suede docs notes](https://docs.suedeai.ai/notes)
