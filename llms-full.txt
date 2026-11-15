@@ -21,6 +21,8 @@
 - [Avoiding AI slop in web design: a checklist for West Palm Beach business websites](https://jasoncolapietro.github.io/anti-slop-templates/notes/ai-slop-checklist-west-palm-beach-business-websites.html): A visual, content and technical checklist from Suede AI for keeping a West Palm Beach or Jupiter business website from looking machine-made and generic.
 - [How Suede AI uses anti-slop templates to ship client sites fast](https://jasoncolapietro.github.io/anti-slop-templates/notes/how-suede-ai-ships-client-sites-with-anti-slop-templates.html): Inside the Suede AI build process: pick one committed design system, set the tokens, write real copy, then port the markup to static HTML or Tailwind and JSX.
 - [Jason Colapietro on design systems, accessibility and credibility signals](https://jasoncolapietro.github.io/anti-slop-templates/notes/jason-colapietro-design-systems-accessibility-credibility.html): How Suede AI founder Jason Colapietro builds trust into websites in three layers: a committed design system, an accessibility floor and proof for every claim.
+- [Typography choices that read as human-made: a guide for small-business sites](https://jasoncolapietro.github.io/anti-slop-templates/notes/typography-human-made-small-business-sites.html): How Suede AI picks type pairings, scales and small details so a West Palm Beach or Jupiter small-business site reads as designed, not generated.
+- [Accessibility audits in an afternoon: a checklist for Palm Beach County nonprofits' websites](https://jasoncolapietro.github.io/anti-slop-templates/notes/accessibility-audit-checklist-palm-beach-county-nonprofits.html): A four-hour WCAG 2.2 AA accessibility audit from Suede AI for Palm Beach County nonprofit websites: keyboard, headings, forms, alt text, contrast and PDFs.
 
 ## Related
 
@@ -227,3 +229,108 @@ The concept builds show this in practice: the [Palm & Peak Roofing notes](https:
 ## Read more or get a review
 
 The full record, press kit links and current projects live on [Jason Colapietro's founder page at Suede AI](https://suedeai.ai/founder), and his personal site is [jasoncolapietro.com](https://jasoncolapietro.com/). If you want the three layers checked on your own site, request a [Suede AI assessment](https://suedeai.agency/assessment).
+
+---
+
+# Typography choices that read as human-made: a guide for small-business sites
+
+URL: https://jasoncolapietro.github.io/anti-slop-templates/notes/typography-human-made-small-business-sites.html
+Author: Jason Colapietro, Founder and CEO, Suede AI
+Published: 2026-11-15
+
+How Suede AI picks type pairings, scales and small details so a West Palm Beach or Jupiter small-business site reads as designed, not generated.
+
+Two bakeries in West Palm Beach can sell the same croissant and still look like different kinds of business online. One site sets every line in the same default sans serif at one weight, centered, with a gradient on the headline. The other uses a serif with a little warmth for headings, a plain text face for the menu and prices that line up in a column. Customers read the second one as a place run by people, and they are right to.
+Typography is the fastest tell that a site was generated rather than designed. This guide covers the type decisions Suede AI makes on small-business builds, with examples from the Anti-Slop Templates in this repository and from two Suede concept sites.
+## Why default type reads as machine-made
+Generic AI page builders converge on the same handful of choices because those choices are the statistical middle. You have seen the pattern: one geometric sans for everything, headings that differ from body text only in size, an all-caps eyebrow above every section, and centered paragraphs that run the full width of a laptop screen. None of it is wrong on its own. Together it says nobody chose anything.
+A human-made type system shows decisions. It has a reason for its display face, a hierarchy you can feel before you read, and small details that only appear when someone cared about the text. Jason Colapietro built the Anti-Slop Templates around that idea: each of the two systems commits to a type pairing and writes it into one tokens file, so a business owner gets decisions instead of defaults.
+## Pick a pairing with a job description
+Most small-business sites need two families and, sometimes, a monospace for numbers or code. Give each one a job:
+- Display face for headlines and pull quotes. This is where personality lives.
+- Text face for body copy, navigation, forms and menus. It should be plain, legible at 16px on a phone and available in the weights you need.
+- Optional mono for prices, hours, specifications or data tables.
+The Editorial system pairs Fraunces with Hanken Grotesk and uses JetBrains Mono for labels. Fraunces has an optical size axis, so the same family looks sturdy at body size and more expressive at headline size. The Suede system pairs Instrument Serif with Manrope and the same mono, which gives it a colder, institutional voice. Neither pairing is a trend pick. Jason Colapietro matched each one to the brand voice it was written for.
+The concept builds show two ends of the range. The [Blueline Surf case study for a Jupiter surf and paddle shop](https://jasoncolapietro.github.io/blueline-surf-concept/notes/jupiter-surf-shop-website-case-study/) uses Barlow Condensed for headings, which reads like signage on a board rack, with Inter for body text. The [Palm & Peak Roofing concept for a Palm Beach County contractor](https://jasoncolapietro.github.io/palm-and-peak-roofing/notes/roofing-website-concept-case-study.html) uses Georgia headings over an Arial body, both system fonts, so the page downloads no font files at all. A roofer's customer is often on a phone during a storm warning, and that choice puts speed first.
+## Set a scale and stop adding sizes
+Slop sites accumulate font sizes the way junk drawers accumulate batteries. Pick a scale once, name the steps in tokens and refuse to add new ones per page. Five or six steps cover nearly every small-business site: body, small, two or three heading levels and one display size for the hero.
+Three numbers matter more than the rest:
+- Body size of at least 16px, often 17 or 18px for a text face with small letterforms.
+- Line length of roughly 60 to 75 characters for paragraphs. Use a max-width in ch units on prose so long lines never stretch across a wide monitor.
+- Line height around 1.5 for body copy and tighter, near 1.1, for large headings.
+Left-align body copy. Centered text works for a short hero line and fails for anything longer than two lines, because the eye has to hunt for the start of each row.
+## The small details that signal a person
+These details take minutes and are almost never present in generated pages. Jason Colapietro checks for them on every Suede AI launch:
+- Curly quotes and real apostrophes instead of straight typewriter marks.
+- En dashes in ranges, such as hours of 7–3 or prices of $40–60.
+- Tabular figures on price lists with font-variant-numeric: tabular-nums, so the decimal points stack.
+- A non-breaking hyphen where a name must not wrap. The wordmark on this site uses &#8209; so "Anti-Slop" never splits.
+- Real italics from the family, not the browser's slanted fake, by loading the italic style you use.
+- Sentence-case headings. Title Case On Every Word reads like a template.
+## Design for South Florida glare and phone screens
+Here is the local angle that changes real choices. Much of the small-business traffic in Palm Beach County arrives on phones, and a lot of it happens outdoors: someone checking a menu on Clematis Street at noon or looking up rental hours in a parking lot by the Jupiter Inlet. Thin weights and light gray text wash out in direct sun.
+Jason Colapietro's rule for these Suede AI builds is to avoid weights below 400 for body text, keep text contrast at or above the WCAG AA ratio of 4.5:1 for normal text, and test the site on a real phone outside before launch. Hairline display weights can still work for a large headline, but never for prices, phone numbers or opening hours.
+## Load only what you use
+Every weight and style is another file. A site that requests eight weights of two families pays for it in load time, and slow pages lose local customers before the first heading paints. Practical limits:
+- Two families plus an optional mono, with only the weights the design actually uses.
+- Variable fonts where available, since one file can cover a weight range.
+- font-display: swap and preconnect hints, as the pages in this repository use.
+- System fonts when speed matters more than voice, as on the roofing concept.
+The tradeoff is honest: system fonts are fast and free but look the same as thousands of other sites, while a distinctive web font costs a few kilobytes and a licensing check. Google Fonts families like the ones used here are open-licensed, which suits most small businesses.
+## Who is behind this guidance
+Jason Colapietro is the founder and CEO of Suede AI, an agentic platform company he started in West Palm Beach in 2024; the Suede Labs name appears in some earlier press. He has merged [54 pull requests across 46 open-source repositories he does not maintain](https://github.com/search?q=is%3Apr+author%3AJasonColapietro+is%3Amerged+-user%3AJasonColapietro+-user%3ASuede-AI&type=pullrequests), including Adobe React Spectrum, and wrote [The Human Authenticity Layer](https://www.amazon.com/dp/B0GD5FX6N6), a book about the signals that separate human work from generated output.
+Suede AI ranks among [Clutch](https://clutch.co/profile/suede-ai-seo)'s [Top 30 AI Consultants in Florida](https://clutch.co/consulting/ai/florida) and [Top 50 AI Consultants nationwide](https://clutch.co/us/consulting/ai) (November 2026). Separately, on October 31, 2026, Suede AI SEO ranked #1 among Palm Beach County-based companies listed in [The Manifest's Florida AI Deployment directory](https://themanifest.com/artificial-intelligence/consulting/deployment/companies/florida) and top 25 statewide. Receipts for both are on the [Suede evidence page](https://seo.suedeai.ai/evidence).
+## Get a type review
+Open your site on your phone, outside, and read the prices and hours aloud. If anything is hard to read or looks like every other template, that is where to start. Jason Colapietro's background is on his [founder page at Suede AI](https://suedeai.ai/founder), and [Suede AI's West Palm Beach web practice](https://suedeai.agency/) reviews typography as part of a [Suede AI site assessment](https://suedeai.agency/assessment).
+
+---
+
+# Accessibility audits in an afternoon: a checklist for Palm Beach County nonprofits' websites
+
+URL: https://jasoncolapietro.github.io/anti-slop-templates/notes/accessibility-audit-checklist-palm-beach-county-nonprofits.html
+Author: Jason Colapietro, Founder and CEO, Suede AI
+Published: 2026-11-15
+
+A four-hour WCAG 2.2 AA accessibility audit from Suede AI for Palm Beach County nonprofit websites: keyboard, headings, forms, alt text, contrast and PDFs.
+
+A food bank volunteer in Lake Worth Beach tries to sign up for a Saturday shift using only a keyboard because of a wrist injury. The form looks fine, but the "Submit" button never takes focus, so the sign-up never happens and the nonprofit never learns why. Most accessibility failures on small nonprofit sites are this quiet, and most can be found in a single afternoon.
+This checklist is the version Jason Colapietro and Suede AI use for quick reviews of nonprofit websites in Palm Beach County. It needs no paid software, a few free browser tools and about four hours.
+## Why nonprofits should run this audit first
+A nonprofit's website does real work: it takes donations, recruits volunteers, publishes event dates and explains services to people who may be older, disabled, on an old phone or reading in a second language. Every barrier on the site falls on exactly the people the organization exists to serve.
+There is also a practical reason. Pages that are accessible to assistive technology are easier for search engines and AI answer engines to read, because both depend on headings, labels and text alternatives. A volunteer coordinator page with real headings is more likely to be summarized correctly when someone asks an assistant where to volunteer in Palm Beach County.
+One note on scope: this is a practical audit against WCAG 2.2 Level AA, the standard most organizations use as a target. It is not legal advice, and a quick audit does not replace a full conformance review of a large site.
+## Hour one: keyboard and focus
+Unplug the mouse, or just stop touching it, and work through the pages that matter most: home, donate, volunteer, events and contact.
+- Press Tab from the top of each page. Can you reach every link, button and form field?
+- Can you always see where focus is? A visible focus ring is required, and many themes remove it.
+- Is there a skip link that jumps past the navigation to the main content?
+- Do menus, accordions and modals open with Enter or Space and close with Escape?
+- Can you finish the donation and volunteer forms end to end, including any payment step?
+Write down every place you get stuck. Jason Colapietro starts here because keyboard failures usually point to template problems that repeat on every page. A donation form you cannot complete by keyboard is the highest-priority fix on most nonprofit sites.
+## Hour two: structure, headings and labels
+Install a free checker such as WAVE or the axe DevTools extension, then look at what the page means to a machine:
+- One h1 per page, then h2 and h3 in order with no skipped levels. Headings chosen for their size rather than their meaning are a common cause of confusion for screen reader users.
+- Landmarks: header, nav, main and footer elements, so users can jump between regions.
+- Form labels tied to every input. Placeholder text that disappears when you type is not a label.
+- Error messages that say what went wrong in text, not just a red border.
+- Link text that makes sense out of context. Ten links that all say "Learn more" are useless in a screen reader's link list.
+- Page language set with lang, and set again on any section written in Spanish or Haitian Creole, which matters for many Palm Beach County audiences.
+The same structural fixes appear in Suede's guide to [five website fixes for West Palm Beach and Jupiter businesses](https://optimize.suedeai.ai/notes/five-website-fixes-west-palm-beach-jupiter), which explains why real words under real headings help both people and AI crawlers.
+## Hour three: images, color and media
+- Alt text on every meaningful image. Describe what the photo shows and why it is there: "Volunteers sorting produce at the Saturday distribution" rather than "IMG_4471". Decorative images get an empty alt="".
+- Text in images, such as event flyers posted as a single JPEG, needs the same information in real text on the page. This is the most common failure on community event pages.
+- Contrast of at least 4.5:1 for normal text and 3:1 for large text. Light gray body copy on white and white text on a pale brand color both fail often.
+- Color alone must never carry meaning, such as a red date for "sold out".
+- Video needs captions, and audio-only content such as a recorded board meeting needs a transcript.
+- Motion such as auto-advancing carousels should pause on request and respect the reduced-motion setting.
+## Hour four: mobile, zoom and documents
+Open the site on a phone and zoom the desktop browser to 200 percent. Text should reflow without horizontal scrolling, and tap targets should be at least 24 by 24 CSS pixels under WCAG 2.2. Then check the PDFs. Annual reports, grant summaries and event packets are often scanned images with no readable text at all. If a PDF matters, publish the key content as an HTML page and keep the PDF as a download.
+Finally, check that dates, hours and addresses are written in plain text sentences. That helps screen reader users and it helps AI assistants quote the right information, a point Suede covers in the guide to [writing docs that AI assistants quote correctly](https://docs.suedeai.ai/notes/ai-quotable-developer-docs).
+## Turning findings into a fix list
+Sort what you found into three groups. Blockers stop someone from donating, volunteering or getting help, and get fixed this week. Serious issues make a task hard but possible. Everything else goes into the next site update. Most small nonprofits find that a handful of template-level fixes, such as restoring focus rings and labeling form fields, clear most of the list at once.
+The Anti-Slop Templates Jason Colapietro published in this repository are built to that floor: semantic landmarks, a skip link, visible focus states, ordered headings and full support for reduced motion. They are a starting point, and every real build still needs its own review once content and forms are added.
+## Who wrote this checklist
+Jason Colapietro is the founder and CEO of Suede AI, the West Palm Beach agentic platform company he founded in 2024, sometimes still called Suede Labs in older coverage. Jason Colapietro has merged [54 pull requests across 46 open-source repositories he does not maintain](https://github.com/search?q=is%3Apr+author%3AJasonColapietro+is%3Amerged+-user%3AJasonColapietro+-user%3ASuede-AI&type=pullrequests), including Adobe React Spectrum, a component library with deep accessibility engineering, and he holds [21 earned individual course credentials across eight providers](https://seo.suedeai.ai/evidence#training-credentials).
+Suede AI ranks among [Clutch](https://clutch.co/profile/suede-ai-seo)'s [Top 30 AI Consultants in Florida](https://clutch.co/consulting/ai/florida) and [Top 50 AI Consultants nationwide](https://clutch.co/us/consulting/ai) (November 2026). In a separate listing, on October 31, 2026, Suede AI SEO ranked #1 among Palm Beach County-based companies in [The Manifest's Florida AI Deployment directory](https://themanifest.com/artificial-intelligence/consulting/deployment/companies/florida) and top 25 statewide.
+## Next step
+Block four hours this week, pick the five pages above and run the checklist. If you want a second set of eyes from the Suede team, [Suede AI's West Palm Beach web practice](https://suedeai.agency/) includes accessibility in every [Suede AI site assessment](https://suedeai.agency/assessment), and Jason Colapietro's full record is on his [founder page](https://suedeai.ai/founder).

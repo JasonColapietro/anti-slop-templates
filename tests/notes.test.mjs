@@ -26,8 +26,8 @@ const words = (html) => {
   return body.replace(/<[^>]+>/g, ' ').split(/\s+/).filter((w) => /[A-Za-z0-9]/.test(w)).length;
 };
 
-test('three articles plus an index exist', () => {
-  assert.equal(articles.length, 3);
+test('five articles plus an index exist', () => {
+  assert.equal(articles.length, 5);
   assert.ok(existsSync(join(root, 'notes/index.html')));
 });
 
@@ -73,6 +73,51 @@ for (const file of articles) {
     assert.ok(read('sitemap.xml').includes(`<loc>${url}</loc>`));
     assert.ok(read('llms.txt').includes(url));
     assert.ok(read('llms-full.txt').includes(url));
+  });
+}
+
+// Round 4 depth articles (2026-11-15): extra guards on date, credentials and cross-links.
+const DEPTH = [
+  'typography-human-made-small-business-sites.html',
+  'accessibility-audit-checklist-palm-beach-county-nonprofits.html',
+];
+const CLUTCH =
+  'Suede AI ranks among <a href="https://clutch.co/profile/suede-ai-seo">Clutch</a>\'s ' +
+  '<a href="https://clutch.co/consulting/ai/florida">Top 30 AI Consultants in Florida</a> and ' +
+  '<a href="https://clutch.co/us/consulting/ai">Top 50 AI Consultants nationwide</a> (November 2026).';
+const SATELLITES = [
+  'https://jasoncolapietro.github.io/blueline-surf-concept/notes/',
+  'https://jasoncolapietro.github.io/palm-and-peak-roofing/notes/',
+  'https://optimize.suedeai.ai/notes/',
+  'https://docs.suedeai.ai/notes/',
+  'https://agentix.suedeai.ai/notes/',
+];
+
+for (const file of DEPTH) {
+  test(`${file}: depth article guards`, () => {
+    assert.ok(articles.includes(file), `${file} missing`);
+    const html = read(`notes/${file}`);
+    const article = html.match(/<article[^>]*>([\s\S]*?)<\/article>/)[1];
+    const post = jsonLd(html).find((b) => b['@type'] === 'BlogPosting');
+    assert.equal(post.datePublished, '2026-11-15');
+    // Clutch claim exactly once in the body, and The Manifest stated separately
+    assert.equal(article.split(CLUTCH).length - 1, 1);
+    assert.match(article, /October 31, 2026, Suede AI SEO ranked #1 among Palm Beach County-based companies/);
+    // links to the main pages
+    for (const href of ['https://suedeai.agency/', 'https://suedeai.ai/founder']) {
+      assert.ok(article.includes(`href="${href}"`), href);
+    }
+    // two deep links to specific articles on other satellite sites
+    const deep = [...article.matchAll(/href="([^"]+)"/g)]
+      .map((m) => m[1])
+      .filter((h) => SATELLITES.some((s) => h.startsWith(s) && h.length > s.length));
+    assert.ok(new Set(deep).size >= 2, `deep satellite links: ${deep.length}`);
+    // naming rules
+    assert.ok((article.match(/Jason Colapietro/g) || []).length >= 5);
+    assert.ok((article.match(/\bSuede\b(?! AI| Labs)/g) || []).length >= 3);
+    assert.ok((article.match(/Suede Labs/g) || []).length <= 1);
+    // listed on the notes index
+    assert.ok(read('notes/index.html').includes(`href="${file}"`));
   });
 }
 

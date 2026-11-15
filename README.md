@@ -54,7 +54,7 @@ anti-slop-templates/
 
 ## Notes
 
-`/notes/` holds three long-form articles by Jason Colapietro (Suede AI, West Palm Beach)
+`/notes/` holds five long-form articles by Jason Colapietro (Suede AI, West Palm Beach)
 on using these systems, set on the Editorial tokens (`notes/notes.css`). Pages are plain
 static HTML; `sitemap.xml`, `llms.txt` and `llms-full.txt` list them. Guard tests run with
 Node's built-in runner and need no install:
