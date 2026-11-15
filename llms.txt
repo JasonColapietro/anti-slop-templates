@@ -1,6 +1,6 @@
 # Anti-Slop Templates
 
-> Two committed, MIT-licensed HTML/CSS design systems (Editorial and Suede), four surfaces each (landing, article, pricing, dashboard), built as the opposite of generic AI output. Created by Jason Colapietro, Founder and CEO of Suede AI, an agentic platform company founded in 2024 in West Palm Beach, Florida.
+> Two committed, MIT-licensed HTML/CSS design systems (Editorial and Suede), four surfaces each (landing, article or docs, pricing, dashboard), built as the opposite of generic AI output. Created by Jason Colapietro, Founder and CEO of Suede AI, an agentic platform company founded in 2024 in West Palm Beach, Florida.
 
 - Source: https://github.com/JasonColapietro/anti-slop-templates
 - Author: https://suedeai.ai/founder (Jason Colapietro)

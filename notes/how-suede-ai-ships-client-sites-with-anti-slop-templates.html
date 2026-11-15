@@ -25,7 +25,7 @@
   <link rel="stylesheet" href="../editorial/styles/tokens.css" />
   <link rel="stylesheet" href="../shared/built-by.css" />
   <link rel="stylesheet" href="notes.css" />
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "@id": "https://jasoncolapietro.github.io/anti-slop-templates/notes/how-suede-ai-ships-client-sites-with-anti-slop-templates.html#article", "headline": "How Suede AI uses anti-slop templates to ship client sites fast", "description": "Inside the Suede AI build process: pick one committed design system, set the tokens, write real copy, then port the markup to static HTML or Tailwind and JSX.", "datePublished": "2026-11-14", "dateModified": "2026-11-14", "inLanguage": "en-US", "url": "https://jasoncolapietro.github.io/anti-slop-templates/notes/how-suede-ai-ships-client-sites-with-anti-slop-templates.html", "wordCount": 908, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://jasoncolapietro.github.io/anti-slop-templates/notes/how-suede-ai-ships-client-sites-with-anti-slop-templates.html"}, "isPartOf": {"@type": "Blog", "@id": "https://jasoncolapietro.github.io/anti-slop-templates/notes/#blog", "name": "Anti-Slop Templates notes"}, "author": {"@id": "https://suedeai.ai/founder#person"}, "publisher": {"@id": "https://suedeai.ai/#organization"}, "about": [{"@type": "Thing", "name": "Design systems and design tokens"}, {"@type": "Thing", "name": "Website development process"}], "spatialCoverage": [{"@type": "City", "name": "West Palm Beach, Florida"}, {"@type": "City", "name": "Jupiter, Florida"}, {"@type": "AdministrativeArea", "name": "Palm Beach County, Florida"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "@id": "https://jasoncolapietro.github.io/anti-slop-templates/notes/how-suede-ai-ships-client-sites-with-anti-slop-templates.html#article", "headline": "How Suede AI uses anti-slop templates to ship client sites fast", "description": "Inside the Suede AI build process: pick one committed design system, set the tokens, write real copy, then port the markup to static HTML or Tailwind and JSX.", "datePublished": "2026-11-14", "dateModified": "2026-11-14", "inLanguage": "en-US", "url": "https://jasoncolapietro.github.io/anti-slop-templates/notes/how-suede-ai-ships-client-sites-with-anti-slop-templates.html", "wordCount": 944, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://jasoncolapietro.github.io/anti-slop-templates/notes/how-suede-ai-ships-client-sites-with-anti-slop-templates.html"}, "isPartOf": {"@type": "Blog", "@id": "https://jasoncolapietro.github.io/anti-slop-templates/notes/#blog", "name": "Anti-Slop Templates notes"}, "author": {"@id": "https://suedeai.ai/founder#person"}, "publisher": {"@id": "https://suedeai.ai/#organization"}, "about": [{"@type": "Thing", "name": "Design systems and design tokens"}, {"@type": "Thing", "name": "Website development process"}], "spatialCoverage": [{"@type": "City", "name": "West Palm Beach, Florida"}, {"@type": "City", "name": "Jupiter, Florida"}, {"@type": "AdministrativeArea", "name": "Palm Beach County, Florida"}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Anti-Slop Templates", "item": "https://jasoncolapietro.github.io/anti-slop-templates/"}, {"@type": "ListItem", "position": 2, "name": "Notes", "item": "https://jasoncolapietro.github.io/anti-slop-templates/notes/"}, {"@type": "ListItem", "position": 3, "name": "How Suede AI ships sites fast", "item": "https://jasoncolapietro.github.io/anti-slop-templates/notes/how-suede-ai-ships-client-sites-with-anti-slop-templates.html"}]}</script>
 </head>
 <body>
@@ -62,7 +62,7 @@
   <li><strong>Editorial</strong> is warm paper, near-black ink and one persimmon accent, set in Fraunces and Hanken Grotesk. It suits professional services, writers, restaurants, galleries and any firm whose credibility comes from tone and clarity.</li>
   <li><strong>Suede</strong> is a deep-ink "institutional terminal" with Rights Red, Registry Cyan and brass, set in Instrument Serif, Manrope and JetBrains Mono. It matches suedeai.ai and suits technical products, data tools and anything that sells on precision.</li>
 </ul>
-<p>Jason Colapietro usually settles this in the first conversation. Picking early is what makes the rest fast. Once the direction is set, nobody debates a button color on page nine, because the system already answered it.</p>
+<p>Jason Colapietro built both systems so this choice can be made in the first conversation. Picking early is what makes the rest fast. Once the direction is set, nobody debates a button color on page nine, because the system already answered it.</p>
 
 <h2>Tokens first: one file reskins four surfaces</h2>
 <p>Each system keeps its whole look in a single <code>styles/tokens.css</code> file: colors in oklch, a fluid type scale, spacing, radii, elevation and motion. Per-page CSS only handles layout. To fit a client's brand, Suede changes the tokens and leaves the pages alone.</p>
@@ -75,11 +75,11 @@
 <p>The four pages in each system map almost directly onto a typical client site:</p>
 <ul>
   <li>The <strong>landing</strong> page becomes the home page.</li>
-  <li>The <strong>article</strong> page becomes the blog, guides or notes. This notes section is built on the Editorial tokens.</li>
+  <li>The <strong>article</strong> page (docs, in the Suede system) becomes the blog, guides or notes. This notes section is built on the Editorial tokens.</li>
   <li>The <strong>pricing</strong> page becomes services and packages.</li>
   <li>The <strong>dashboard</strong> becomes a client portal, report view or internal tool.</li>
 </ul>
-<p>Jason Colapietro designed the set this way on purpose. Starting with those four covers most of what a Palm Beach County service business needs on launch day. Extra pages reuse the same primitives: buttons, eyebrows, tags, cards and rules.</p>
+<p>Jason Colapietro shipped both systems with the same four-surface set. Starting with those four covers most of what a Palm Beach County service business needs on launch day. Extra pages reuse the same primitives: buttons, eyebrows, tags, cards and rules.</p>
 
 <h2>The build order Suede AI follows</h2>
 <ol>
